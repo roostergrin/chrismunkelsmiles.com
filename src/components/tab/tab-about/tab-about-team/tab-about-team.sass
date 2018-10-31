@@ -1,0 +1,67 @@
+.tab-about-team
+  margin-top: 272px
+
+  &__container
+    @extend .container
+
+  &__content-box
+    border: 1px solid $marigold
+    padding-bottom: 64px
+
+  &__header-image
+    @extend .img-norm
+    margin: 0 auto
+    margin-top: -240px
+    margin-bottom: 32px
+    width: 937px
+    height: 414px
+
+  &__title
+    margin-bottom: 48px
+    text-align: center
+    color: $marigold
+    font-size: 64px
+    font-style: italic
+
+  &__content
+    margin: 0 auto
+    margin-bottom: 48px
+    width: 937px
+
+  &__members
+    margin: 0 auto
+    max-width: 760px
+
+  &__member
+    display: flex
+    margin-top: -54px
+
+    &:first-child
+      margin-top: 0
+
+    &:nth-child(even)
+      flex-direction: row-reverse
+
+      .tab-about-team__name
+        text-align: right
+
+      .tab-about-team__col-text
+        padding-right: 25px
+
+  &__col-image,
+  &__col-text
+    display: flex
+    flex-direction: column
+    justify-content: center
+    width: 50%
+
+  &__image
+    @extend .img-norm
+    width: 360px
+    height: 472px
+
+  &__name
+    margin-bottom: 18px
+    color: $marigold
+    font-size: 48px
+    font-style: italic

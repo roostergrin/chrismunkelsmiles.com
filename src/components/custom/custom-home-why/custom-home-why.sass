@@ -1,0 +1,96 @@
+.custom-home-why
+
+  &__background
+    background: rgba(241, 242, 233, 0.3)
+
+  &__container
+    @extend .container--flex
+    margin-top: 180px
+
+  &__giant-title
+    position: absolute
+    top: -160px
+    left: calc(50% - 280px)
+    font-size: 250px
+    font-style: italic
+
+    span
+      position: relative
+      top: -190px
+      left: 420px
+
+  &__row
+    display: flex
+    margin-top: 180px
+    width: 100%
+
+  &__col-left
+    margin-right: 12px
+    width: calc(50% - 12px)
+
+  &__left-top
+    display: flex
+    position: relative
+    justify-content: flex-end
+    margin-bottom: 24px
+
+    &--title
+      position: absolute
+      top: 75px
+      right: 210px
+      color: $tussok
+      font-size: 64px
+      font-style: italic
+
+      span
+        position: relative
+        right: 90px
+
+    &--image
+      @extend .img-norm
+      width: 260px
+      height: 260px
+
+  &__left-bottom
+
+    &--title
+      text-align: center
+      color: $tussok
+      font-size: 64px
+      font-style: italic
+
+      span
+        position: relative
+        left: 130px
+
+    &--image
+      @extend .img-norm
+      width: 100%
+      height: 322px
+
+  &__col-right
+
+    &--title
+      text-align: center
+      color: $tussok
+      font-size: 64px
+      font-style: italic
+
+      span
+        position: relative
+        left: 100px
+
+    &--image
+      @extend .img-norm
+      margin-top: 100px
+      width: 559px
+      height: 464px
+
+  &__button
+    margin: 0 auto
+    margin-top: 62px
+    margin-bottom: 236px
+    border-radius: 10px
+    background: $marigold
+    padding: 8px 36px
+    color: $white

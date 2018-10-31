@@ -1,0 +1,46 @@
+.custom-contact-form
+
+  &__container
+    @extend .container
+    padding: 0
+    width: 100%
+    max-width: 1440px
+
+  &__row
+    display: flex
+
+  &__col-left,
+  &__col-right
+    width: 30%
+
+  &__col-center
+    padding: 78px 68px 76px 54px
+    width: 40%
+
+  &__col-right
+    border-left: 1px solid $marigold
+    padding: 78px 0 76px 54px
+
+  &__image
+    @extend .img-norm
+    width: 100%
+    height: 564px
+
+  &__contact-title,
+  &__office-title
+    margin-bottom: 14px
+    color: $marigold
+    font-size: 48px
+    font-style: italic
+
+  &__contact-text
+    margin-bottom: 16px
+
+  &__address,
+  &__phone,
+  &__email
+    display: block
+    font-size: 18px
+
+  &__address
+    margin-bottom: 16px

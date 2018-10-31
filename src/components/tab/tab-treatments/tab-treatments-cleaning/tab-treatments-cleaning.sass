@@ -1,0 +1,87 @@
+.tab-treatments-cleaning
+
+  &__container
+    @extend .container
+    margin-top: 64px
+
+  &__content-box
+    margin: 0 auto
+    padding-bottom: 64px
+    max-width: 860px
+
+  &__title
+    margin-bottom: 48px
+    text-align: center
+    color: $marigold
+    font-size: 64px
+    font-style: italic
+
+  &__content
+    margin: 0 auto
+    margin-bottom: 48px
+    width: 743px
+
+  &__blog-container
+    margin: 0 auto
+    max-width: 760px
+
+  &__blog
+    display: flex
+    margin-top: -54px
+
+    &:first-child
+      margin-top: 0
+
+    &:nth-child(even)
+      flex-direction: row-reverse
+
+      .tab-treatments-cleaning__blog-title
+        text-align: right
+
+      .tab-treatments-cleaning__col-blog-text
+        padding-right: 25px
+
+  &__col-blog-image,
+  &__col-blog-text
+    display: flex
+    flex-direction: column
+    justify-content: center
+    width: 50%
+
+  &__blog-image
+    @extend .img-norm
+    width: 360px
+    height: 472px
+
+  &__blog-title
+    margin-bottom: 18px
+    color: $marigold
+    font-size: 48px
+    font-style: italic
+
+  &__services-title
+    margin-top: 96px
+    text-align: center
+    color: $marigold
+    font-size: 48px
+    font-style: italic
+
+  &__services
+    display: flex
+    flex-wrap: wrap
+
+  &__service
+    padding: 12px
+    width: 33.3%
+
+  &__service-image
+    @extend .img-norm
+    margin-bottom: 18px
+    width: 100%
+    height: 166px
+
+  &__service-title
+    margin-bottom: 24px
+    color: $marigold
+    font-size: 18px
+    font-weight: 600

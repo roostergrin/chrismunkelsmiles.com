@@ -1,0 +1,12 @@
+.slider-office-tour
+  .slider-office-tour__background
+    .slider-office-tour__container
+      .slider-office-tour__title(v-html='props.title')
+      swiper.slider-office-tour__slider(:options='swiperOption')
+        swiperSlide.slider-office-tour__slide(v-for='(image, i) in props.images', :key='i')
+          .slider-office-tour__image(:style='"backgroundImage: url(" + image.image + ");"')
+            .slider-office-tour__overlay
+      .slider-office-tour__arrow-prev
+        Icon(name='LeftCarot')
+      .slider-office-tour__arrow-next
+        Icon(name='RightCarot')

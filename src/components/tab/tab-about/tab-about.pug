@@ -1,0 +1,9 @@
+.tab-about
+  transition(name='fade-in-nav')
+    TabAboutDoctor(:props='props.tab_about_doctor', v-if='$route.hash === "" || $route.hash === "#doctor"')
+  transition(name='fade-in-nav')
+    TabAboutTeam(:props='props.tab_about_team', v-if='$route.hash === "#team"')
+  transition(name='fade-in-nav')
+    TabAboutTech(:props='props.tab_about_tech', v-if='$route.hash === "#tech"')
+  transition(name='fade-in-nav')
+    TabAboutOffice(:props='props.tab_about_office', v-if='$route.hash === "#office"')

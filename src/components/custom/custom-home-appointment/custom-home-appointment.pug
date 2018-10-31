@@ -1,0 +1,12 @@
+.custom-home-appointment
+  .custom-home-appointment__background
+    .custom-home-appointment__container
+      .custom-home-appointment__row
+        .custom-home-appointment__col-left
+          .custom-home-appointment__col-left--title(v-html='props.left_treatment.title')
+          .custom-home-appointment__col-left--image(:style='"backgroundImage: url(" + props.left_treatment.image + ");"')
+        .custom-home-appointment__col-right
+          .custom-home-appointment__col-right--image(:style='"backgroundImage: url(" + props.right_treatment.image + ");"')
+          .custom-home-appointment__col-right--title(v-html='props.right_treatment.title')
+      center
+        .custom-home-appointment__button Book an Appointment

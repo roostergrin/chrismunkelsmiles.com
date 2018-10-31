@@ -1,2 +1,22 @@
 .footer(v-if='props')
-  h1 Footer Component
+  .footer__background
+    .footer__background-line
+    .footer__container
+      .footer__col-left
+        .footer__contact-box
+          .footer__label Contact
+          a.footer__address(v-html='props.acf.footer.address', :href='props.acf.footer.address_link', target='_blank')
+          a.footer__phone-number(v-html='props.acf.footer.phone', :href='props.acf.footer.phone_link')
+      .footer__col-center
+        router-link.footer__logo-box(to='/')
+          .footer__logo(style='background-image: url(/static/MunkelLogo.png)')
+      .footer__col-right
+        .footer__social-box
+          .footer__facebook
+            Icon(name='FooterFacebook')
+          .footer__phone
+            Icon(name='FooterPhone')
+          .footer__form
+            Icon(name='FooterForm')
+          .footer__calendar
+            Icon(name='FooterCalendar')

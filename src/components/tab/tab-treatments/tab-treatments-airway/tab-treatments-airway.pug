@@ -1,0 +1,14 @@
+.tab-treatments-airway
+  .tab-treatments-airway__background
+    .tab-treatments-airway__container
+      .tab-treatments-airway__content-box
+        .tab-treatments-airway__title(v-html='props.title')
+        .tab-treatments-airway__content(v-html='props.content')
+        .tab-treatments-airway__blog-container
+          .tab-treatments-airway__blog(v-for='(blog, i) in blog', v-if='blog.categories.includes(6)')
+            .tab-treatments-airway__col-blog-image
+              .tab-treatments-airway__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+            .tab-treatments-airway__col-blog-text
+              .tab-treatments-airway__blog-title(v-html='blog.acf.blog_posts.title')
+              .tab-treatments-airway__blog-summary(v-html='blog.acf.blog_posts.summary')
+      

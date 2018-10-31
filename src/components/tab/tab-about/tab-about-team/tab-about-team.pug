@@ -1,0 +1,14 @@
+.tab-about-team
+  .tab-about-team__background
+    .tab-about-team__container
+      .tab-about-team__content-box
+        .tab-about-team__header-image(:style='"backgroundImage: url(" + props.header_image + ");"')
+        .tab-about-team__title(v-html='props.title')
+        .tab-about-team__content(v-html='props.content')
+        .tab-about-team__members
+          .tab-about-team__member(v-for='(member, i) in props.members')
+            .tab-about-team__col-image
+              .tab-about-team__image(:style='"backgroundImage: url(" + member.image + ");"')
+            .tab-about-team__col-text
+              .tab-about-team__name(v-html='member.name')
+              .tab-about-team__bio(v-html='member.bio')

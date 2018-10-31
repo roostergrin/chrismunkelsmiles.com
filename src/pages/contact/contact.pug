@@ -1,0 +1,6 @@
+.pages-contact
+  Loader(v-show='loading')
+  div(v-if='props')
+    HeroImage(:props='props.acf.hero_image')
+    CustomContactForm(:props='props.acf.custom_contact_form')
+    CustomContactMap(:props='props.acf.custom_contact_map')

@@ -1,14 +1,11 @@
 <template lang='pug' src='./navigation.pug'></template>
 
 <script>
+import NavDesktop from 'components/navigation/nav-desktop/nav-desktop'
+
 export default {
-  computed: {
-    props () {
-      return this.$store.state.app.nav
-    },
-    links () {
-      return this.$router.options.routes
-    }
+  components: {
+    NavDesktop
   }
 }
 </script>

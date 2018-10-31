@@ -1,0 +1,21 @@
+.tab-treatments-cleaning
+  .tab-treatments-cleaning__background
+    .tab-treatments-cleaning__container
+      .tab-treatments-cleaning__content-box
+        .tab-treatments-cleaning__title(v-html='props.title')
+        .tab-treatments-cleaning__content(v-html='props.content')
+        .tab-treatments-cleaning__blog-container
+          .tab-treatments-cleaning__blog(v-for='(blog, i) in blog', v-if='blog.categories.includes(2)')
+            .tab-treatments-cleaning__col-blog-image
+              .tab-treatments-cleaning__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+            .tab-treatments-cleaning__col-blog-text
+              .tab-treatments-cleaning__blog-title(v-html='blog.acf.blog_posts.title')
+              .tab-treatments-cleaning__blog-summary(v-html='blog.acf.blog_posts.summary')
+        .tab-treatments-cleaning__services-title More Services
+        .tab-treatments-cleaning__services
+          .tab-treatments-cleaning__service(v-for='(blog, j) in blog')
+            .tab-treatments-cleaning__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+            .tab-treatments-cleaning__service-title(v-html='blog.acf.blog_posts.title')
+            .tab-treatments-cleaning__service-content(v-html='blog.acf.blog_posts.summary')
+          
+      

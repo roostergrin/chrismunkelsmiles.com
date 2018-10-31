@@ -1,0 +1,38 @@
+.form-contact
+
+  &__input-field
+    border: 1px solid #a2a2a2
+    padding: 12px 0 12px 16px
+    width: 100%
+
+    &:focus
+      outline: none
+
+  &__input-field-half
+    border: 1px solid #a2a2a2
+    padding: 12px 0 12px 16px
+    width: 60%
+
+    &:focus
+      outline: none
+
+  &__error-message
+    transition: all 0.8s ease-in-out
+    opacity: 0
+    margin-top: 4px
+    width: 0
+    height: 30px
+    color: $danger
+
+    &--active
+      transform: scale(1)
+      opacity: 1
+      width: 100%
+
+  &__submit-button
+    display: inline-block
+    border-radius: 10px
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.14)
+    background: $marigold
+    padding: 8px 80px
+    color: $white

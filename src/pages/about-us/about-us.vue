@@ -2,6 +2,9 @@
 
 <script>
 import Loader from 'components/loader/loader'
+import HeroImage from 'components/hero/hero-image/hero-image'
+import NavSubnav from 'components/navigation/nav-subnav/nav-subnav'
+import TabAbout from 'components/tab/tab-about/tab-about'
 
 export default {
   name: 'about-us',
@@ -14,7 +17,10 @@ export default {
     }
   },
   components: {
-    Loader
+    Loader,
+    HeroImage,
+    NavSubnav,
+    TabAbout
   }
 }
 </script>

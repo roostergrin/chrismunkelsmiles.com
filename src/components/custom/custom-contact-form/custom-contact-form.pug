@@ -1,0 +1,15 @@
+.custom-contact-form
+  .custom-contact-form__background
+    .custom-contact-form__container
+      .custom-contact-form__row
+        .custom-contact-form__col-left
+          .custom-contact-form__image(:style='"backgroundImage: url(" + props.image + ");"')
+        .custom-contact-form__col-center
+          .custom-contact-form__contact-title(v-html='props.contact_title')
+          .custom-contact-form__contact-text(v-html='props.contact_text')
+          FormContact
+        .custom-contact-form__col-right
+          .custom-contact-form__office-title(v-html='props.office_title')
+          a.custom-contact-form__address(v-html='props.address', :href='props.address_link', target='_blank')
+          a.custom-contact-form__phone(:href='props.phone_link') Phone: {{ props.phone }}
+          a.custom-contact-form__email(:href='props.email_link', v-html='props.email')

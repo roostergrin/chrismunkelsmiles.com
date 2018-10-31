@@ -1,0 +1,17 @@
+.custom-home-why
+  .custom-home-why__background
+    .custom-home-why__container
+      .custom-home-why__giant-title(v-html='props.giant_title')
+      .custom-home-why__row
+        .custom-home-why__col-left
+          .custom-home-why__left-top
+            .custom-home-why__left-top--title(v-html='props.top_left_treatment.title')
+            .custom-home-why__left-top--image(:style='"backgroundImage: url(" + props.top_left_treatment.image + ");"')
+          .custom-home-why__left-bottom
+            .custom-home-why__left-bottom--image(:style='"backgroundImage: url(" + props.bottom_left_treatment.image + ");"')
+            .custom-home-why__left-bottom--title(v-html='props.bottom_left_treatment.title')
+        .custom-home-why__col-right
+          .custom-home-why__col-right--image(:style='"backgroundImage: url(" + props.right_treatment.image + ");"')
+          .custom-home-why__col-right--title(v-html='props.right_treatment.title')
+      .custom-home-why__button See All Treatments 
+        

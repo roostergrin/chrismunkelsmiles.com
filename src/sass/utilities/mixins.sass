@@ -129,3 +129,29 @@
   opacity: 0
   &.fade
     animation: fade-out-left $duration ease-in-out forwards
+
+@mixin fade-in-nav
+  &-enter-active
+    transition: all .5s ease-in-out
+
+  &-leave-active
+    transition: all .5s ease-in-out
+
+  &-enter
+    opacity: 0
+
+  &-leave-to
+    opacity: 0
+
+@mixin fade-in-tab
+  &-enter-active
+    transition: all .5s ease-in-out
+
+  &-leave-active
+    transition: all 0 ease-in-out
+
+  &-enter
+    opacity: 0
+
+  &-leave-to
+    opacity: 0

@@ -1,0 +1,61 @@
+.custom-home-appointment
+
+  &__background
+    background:  rgba(241, 242, 233, 0.3)
+
+  &__container
+    @extend .container
+
+  &__row
+    display: flex
+    margin-top: 211px
+
+  &__col-left
+    display: flex
+    position: relative
+    justify-content: flex-end
+    margin-right: 12px
+    width: calc(50% - 12px)
+    color: $tussok
+
+    &--title
+      position: absolute
+      top: 120px
+      left: -84px
+      text-align: right
+      color: $tussok
+      font-size: 64px
+      font-style: italic
+
+    &--image
+      @extend .img-norm
+      width: 357px
+      height: 478px
+
+  &__col-right
+    margin-left: 12px
+    width: calc(50% - 12px)
+
+    &--image
+      @extend .img-norm
+      margin-top: 80px
+      width: 457px
+      height: 296px
+
+    &--title
+      margin-top: 10px
+      margin-left: 100px
+      text-align: left
+      color: $tussok
+      font-size: 64px
+      font-style: italic
+
+  &__button
+    display: inline-block
+    margin: 0 auto
+    margin-top: 62px
+    margin-bottom: 88px
+    border-radius: 10px
+    background: $marigold
+    padding: 8px 36px
+    color: $white

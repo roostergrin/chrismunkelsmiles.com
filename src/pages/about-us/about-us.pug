@@ -1,4 +1,6 @@
 .pages-about-us
   Loader(v-if='loading')
   div(v-if='!loading')
-    pre {{ props }}
+    HeroImage(:props='props.acf.hero_image')
+    NavSubnav(:props='props.acf.nav_subnav')
+    TabAbout(:props='props.acf')

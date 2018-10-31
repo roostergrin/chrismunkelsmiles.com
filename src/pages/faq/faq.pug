@@ -1,0 +1,5 @@
+.pages-faq
+  Loader(v-if='loading')
+  div(v-if='!loading')
+    HeroImage(:props='props.acf.hero_image')
+    CustomFAQRow(:props='props.acf.custom_faq_row')

@@ -1,0 +1,58 @@
+.tab-treatments-restorations
+
+  &__container
+    @extend .container
+    margin-top: 64px
+
+  &__content-box
+    padding-bottom: 64px
+
+  &__title
+    margin-bottom: 48px
+    text-align: center
+    color: $marigold
+    font-size: 64px
+    font-style: italic
+
+  &__content
+    margin: 0 auto
+    margin-bottom: 48px
+    width: 743px
+
+  &__blog-container
+    margin: 0 auto
+    max-width: 760px
+
+  &__blog
+    display: flex
+    margin-top: -54px
+
+    &:first-child
+      margin-top: 0
+
+    &:nth-child(even)
+      flex-direction: row-reverse
+
+      .tab-treatments-restorations__blog-title
+        text-align: right
+
+      .tab-treatments-restorations__col-blog-text
+        padding-right: 25px
+
+  &__col-blog-image,
+  &__col-blog-text
+    display: flex
+    flex-direction: column
+    justify-content: center
+    width: 50%
+
+  &__blog-image
+    @extend .img-norm
+    width: 360px
+    height: 472px
+
+  &__blog-title
+    margin-bottom: 18px
+    color: $marigold
+    font-size: 48px
+    font-style: italic

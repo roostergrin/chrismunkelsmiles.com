@@ -1,0 +1,16 @@
+.form-contact
+  .form-contact__thank-you(v-if='formSubmitted')
+    | Thank you for contacting us, someone from our team will get in touch with you as soon as possible.
+  form.form-contact__form(v-if='!formSubmitted')
+    .form-contact__group
+      input.form-contact__input-field(name='name', v-model='name', v-validate="'required'", type='text', placeholder='Name', :class="{ 'form-contact__input-field--error': errors.has('name') }")
+      .form-contact__error-message(:class="{ 'form-contact__error-message--active': errors.has('name') }") Please fill this field out.
+    .form-contact__group
+      input.form-contact__input-field(name='email', v-model='email', v-validate="'required'", type='text', placeholder='E-mail', :class="{ 'form-contact__input-field--error': errors.has('email') }")
+      .form-contact__error-message(:class="{ 'form-contact__error-message--active': errors.has('email') }") Please fill this field out.
+    .form-contact__group
+      input.form-contact__input-field-half(name='phone', v-model='phone', v-validate="'required'", type='text', placeholder='Phone #', :class="{ 'form-contact__input-field--error': errors.has('phone') }")
+      .form-contact__error-message(:class="{ 'form-contact__error-message--active': errors.has('phone') }") Please fill this field out.
+    .form-contact__group
+      .form-contact__submit-button(@click='validate()')
+        | Submit

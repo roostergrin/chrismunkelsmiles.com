@@ -1,0 +1,14 @@
+.tab-treatments-kids
+  .tab-treatments-kids__background
+    .tab-treatments-kids__container
+      .tab-treatments-kids__content-box
+        .tab-treatments-kids__title(v-html='props.title')
+        .tab-treatments-kids__content(v-html='props.content')
+        .tab-treatments-kids__blog-container
+          .tab-treatments-kids__blog(v-for='(blog, i) in blog', v-if='blog.categories.includes(5)')
+            .tab-treatments-kids__col-blog-image
+              .tab-treatments-kids__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+            .tab-treatments-kids__col-blog-text
+              .tab-treatments-kids__blog-title(v-html='blog.acf.blog_posts.title')
+              .tab-treatments-kids__blog-summary(v-html='blog.acf.blog_posts.summary')
+      

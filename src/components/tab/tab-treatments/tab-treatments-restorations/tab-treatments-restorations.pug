@@ -1,0 +1,14 @@
+.tab-treatments-restorations
+  .tab-treatments-restorations__background
+    .tab-treatments-restorations__container
+      .tab-treatments-restorations__content-box
+        .tab-treatments-restorations__title(v-html='props.title')
+        .tab-treatments-restorations__content(v-html='props.content')
+        .tab-treatments-restorations__blog-container
+          .tab-treatments-restorations__blog(v-for='(blog, i) in blog', v-if='blog.categories.includes(4)')
+            .tab-treatments-restorations__col-blog-image
+              .tab-treatments-restorations__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+            .tab-treatments-restorations__col-blog-text
+              .tab-treatments-restorations__blog-title(v-html='blog.acf.blog_posts.title')
+              .tab-treatments-restorations__blog-summary(v-html='blog.acf.blog_posts.summary')
+      

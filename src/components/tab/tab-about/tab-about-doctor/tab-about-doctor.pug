@@ -1,0 +1,10 @@
+.tab-about-doctor
+  .tab-about-doctor__background
+    .tab-about-doctor__container
+      .tab-about-doctor__doctor-image(:style='"backgroundImage: url(" + props.doctor_image + ");"')
+      .tab-about-doctor__bio-content
+        .tab-about-doctor__bio-border
+        .tab-about-doctor__name(v-html='props.name')
+        .tab-about-doctor__content(v-html='props.content')
+        .tab-about-doctor__image(:style='"backgroundImage: url(" + props.image + ");"')
+        

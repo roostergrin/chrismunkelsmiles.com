@@ -1,0 +1,75 @@
+.nav-desktop(v-if='props')
+  transition(name='fade-in-nav')
+    .nav-desktop__top-background(v-if='!$store.state.nav || activeMenu || activeModal')
+      .nav-desktop__top-container
+        a.nav-desktop__icon-box(:href='props.acf.nav.phone_link')
+          .nav-desktop__phone-icon
+            Icon(name='Phone')
+          .nav-desktop__phone-text(v-html='props.acf.nav.phone')
+        .nav-desktop__icon-box(@click='toggleModalContact')
+          .nav-desktop__calendar-icon
+            Icon(name='Calendar')
+          .nav-desktop__calendar-text Book Online Now
+        .nav-desktop__icon-box
+          .nav-desktop__form-icon
+            Icon(name='NavForm')
+          .nav-desktop__form-text Download Patient Forms
+  transition(name='fade-in-nav')
+    .nav-desktop__bottom-background(v-if='!$store.state.nav || activeMenu || activeModal')
+      .nav-desktop__background-line
+      .nav-desktop__bottom-container
+        router-link.nav-desktop__col-center(to='/')
+          .nav-desktop__logo(style='background-image: url(/static/MunkelLogo.png)', @click='clearMenu')
+        .nav-desktop__col-right
+          .nav-desktop__hamburger(@click='toggleMenu', :class='{ "nav-desktop__hamburger--scrolled": $store.state.nav }', v-if='!activeMenu')
+            .nav-desktop__hamburger--lines
+              .nav-desktop__hamburger--line-one(:class='{ "nav-desktop__hamburger--line-one--scrolled": $store.state.nav }')
+              .nav-desktop__hamburger--line-two(:class='{ "nav-desktop__hamburger--line-two--scrolled": $store.state.nav }')
+              .nav-desktop__hamburger--line-three(:class='{ "nav-desktop__hamburger--line-three--scrolled": $store.state.nav }')
+          .nav-desktop__hamburger--cross(v-if='activeMenu', @click='toggleMenu')
+  transition(name='fade-in-nav')
+    .nav-desktop__home-nav(v-if='$store.state.nav && !activeMenu && $route.name === "Home" && !activeModal')
+      .nav-desktop__row
+        .nav-desktop__home-icons
+          a.nav-desktop__phone(:href='props.acf.nav.phone_link')
+            Icon(name='Phone')
+          .nav-desktop__form
+            Icon(name='NavForm')
+          .nav-desktop__calendar(@click='toggleModalContact')
+            Icon(name='Calendar')
+        .nav-desktop__home-logo
+          Icon(name='HomeLogo')
+        .nav-desktop__home-hamburger(@click='toggleMenu', :class='{ "nav-desktop__hamburger--scrolled": $store.state.nav }', v-if='!activeMenu || !$store.state.nav')
+          .nav-desktop__home-hamburger--lines
+            .nav-desktop__home-hamburger--line-one(:class='{ "nav-desktop__hamburger--line-one--scrolled": $store.state.nav }')
+            .nav-desktop__home-hamburger--line-two(:class='{ "nav-desktop__hamburger--line-two--scrolled": $store.state.nav }')
+            .nav-desktop__home-hamburger--line-three(:class='{ "nav-desktop__hamburger--line-three--scrolled": $store.state.nav }')
+  transition(name='fade-in-nav')
+    .nav-desktop__active-background(v-if='activeMenu')
+      .nav-desktop__active-header
+        .nav-desktop__active-container
+          .nav-desktop__active-background-line
+          .nav-desktop__active-box(v-for='(link, j) in links', :key='j', v-if='link.navigation')
+            .nav-desktop__active-thumbnail(:style='"backgroundImage: url(" + link.thumbnail + ");"')
+            .nav-desktop__active-link(v-html='link.name', @click='changePage(link.path)')
+            .nav-desktop__active-sublink(v-for='(sublink, k) in link.children', :key='k', @click='changePage(sublink.path)', v-html='sublink.name', v-if='sublink.meta.navigation')
+          .nav-desktop__active-box
+          .nav-desktop__active-box
+            .nav-desktop__active-contact
+              .nav-desktop__active-book-appointment Book an Appointment
+              .nav-desktop__active-address(v-html='props.acf.nav.address')
+              .nav-desktop__active-phone(v-html='props.acf.nav.phone')
+      .nav-desktop__active-footer-line
+        .nav-desktop__active-social-media-container
+          .nav-desktop__active-social-media
+            .nav-desktop__active-facebook
+              Icon(name='FooterFacebook')
+            .nav-desktop__active-phone
+              Icon(name='FooterPhone')
+            .nav-desktop__active-form
+              Icon(name='FooterForm')
+            .nav-desktop__active-calendar
+              Icon(name='FooterCalendar')
+  transition(name='fade-in-nav')
+    ModalContact(v-if='activeModal', @hideModalContact='toggleModalContact')
+              

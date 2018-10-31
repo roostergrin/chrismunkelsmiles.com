@@ -1,0 +1,14 @@
+.tab-treatments-cosmetic
+  .tab-treatments-cosmetic__background
+    .tab-treatments-cosmetic__container
+      .tab-treatments-cosmetic__content-box
+        .tab-treatments-cosmetic__title(v-html='props.title')
+        .tab-treatments-cosmetic__content(v-html='props.content')
+        .tab-treatments-cosmetic__blog-container
+          .tab-treatments-cosmetic__blog(v-for='(blog, i) in blog', v-if='blog.categories.includes(3)')
+            .tab-treatments-cosmetic__col-blog-image
+              .tab-treatments-cosmetic__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+            .tab-treatments-cosmetic__col-blog-text
+              .tab-treatments-cosmetic__blog-title(v-html='blog.acf.blog_posts.title')
+              .tab-treatments-cosmetic__blog-summary(v-html='blog.acf.blog_posts.summary')
+      
