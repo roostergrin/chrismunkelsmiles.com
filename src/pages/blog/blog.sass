@@ -1,66 +1,50 @@
-.tab-treatments-airway
+.pages-blog
+  padding-top: 137px
+
+  &__hero
+    @extend .img-norm
+    width: 100%
+    height: 560px
+
+  &__background
+    position: relative
+
+  &__top-back-treatment
+    display: flex
+    position: absolute
+    top: 40px
+    left: 160px
+    align-items: center
+
+    &:hover
+      cursor: pointer
+
+  &__icon-back
+    margin-right: 14px
+    width: 38px
+    height: 38px
 
   &__container
-    @extend .container
-    margin-top: 64px
-
-  &__content-box
     margin: 0 auto
-    padding-bottom: 64px
-    max-width: 860px
+    max-width: 743px
 
   &__title
-    margin-bottom: 48px
-    text-align: center
-    color: $marigold
-    font-size: 64px
-    font-style: italic
-
-  &__content
-    margin: 0 auto
-    margin-bottom: 48px
-    width: 743px
-
-  &__blog-container
-    margin: 0 auto
-    max-width: 760px
-
-  &__blog
-    display: flex
-    margin-top: -54px
-
-    &:first-child
-      margin-top: 0
-
-    &:nth-child(even)
-      flex-direction: row-reverse
-
-      .tab-treatments-airway__blog-title
-        text-align: right
-
-      .tab-treatments-airway__col-blog-text
-        padding-right: 25px
-
-  &__col-blog-image,
-  &__col-blog-text
-    display: flex
-    flex-direction: column
-    justify-content: center
-    width: 50%
-
-  &__blog-image
-    @extend .img-norm
-    width: 360px
-    height: 472px
-
-  &__blog-title
-    margin-bottom: 18px
+    margin-bottom: 32px
+    padding-top: 114px
     color: $marigold
     font-size: 48px
     font-style: italic
 
-  &__blog-see-more
-    text-align: right
+  &__bottom-back-treatment
+    display: block
+    margin-top: 64px
+    color: $marigold
+
+    &:hover
+      cursor: pointer
+
+  img
+    margin: 16px 0
 
   &__services-title
     margin-top: 96px
@@ -91,11 +75,15 @@
 
   &__service-container
     position: relative
+    margin: 0 auto
+    max-width: 800px
 
   &__service-index
     column-count: 3
+    margin: 0 auto
     margin-top: 32px
     padding: 12px
+    max-width: 800px
 
   &__prev-btn,
   &__next-btn

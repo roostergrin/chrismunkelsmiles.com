@@ -1,0 +1,28 @@
+.pages-blog(v-if='blog')
+  .pages-blog__hero(:style='"backgroundImage: url(" + blog.acf.blog_posts.hero + ");"')
+  .pages-blog__background
+    router-link.pages-blog__top-back-treatment(to='/treatments')
+      .pages-blog__icon-back
+        Icon(name='LeftCarot')
+      .pages-blog__back-text Back to Treatments
+    .pages-blog__container
+      .pages-blog__title(v-html='blog.acf.blog_posts.title')
+      .pages-blog__content(v-html='blog.acf.blog_posts.content')
+      router-link.pages-blog__bottom-back-treatment(to='/treatments') < Back to Treatments
+    .pages-blog__service-container
+      swiper.pages-blog__services(:options='swiperOption')
+        swiperSlide.pages-blog__service(v-for='(blog, j) in allBlogs', :key='j', v-if='blog.categories.includes(activeCategories)')
+          router-link.pages-blog__service-image-container(:to='blog.slug')
+            .pages-blog__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+          router-link.pages-blog__service-title(v-html='blog.acf.blog_posts.title', :to='blog.slug')
+          .pages-blog__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
+          router-link.pages-blog__service-see-more(:to='blog.slug') See More...
+      .pages-blog__prev-btn
+        Icon(name='LeftCarot')
+      .pages-blog__next-btn
+        Icon(name='RightCarot')
+    .pages-blog__service-index
+      router-link.pages-blog__service-link(v-for='(blog, k) in allBlogs', :key='k', v-if='blog.categories.includes(activeCategories)', :to='blog.slug')
+        .pages-blog__service-text(v-html='blog.acf.blog_posts.title')
+        span  +
+  

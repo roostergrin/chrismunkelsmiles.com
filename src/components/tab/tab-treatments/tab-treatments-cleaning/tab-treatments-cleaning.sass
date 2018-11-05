@@ -59,6 +59,9 @@
     font-size: 48px
     font-style: italic
 
+  &__blog-see-more
+    text-align: right
+
   &__services-title
     margin-top: 96px
     text-align: center
@@ -66,13 +69,8 @@
     font-size: 48px
     font-style: italic
 
-  &__services
-    display: flex
-    flex-wrap: wrap
-
   &__service
     padding: 12px
-    width: 33.3%
 
   &__service-image
     @extend .img-norm
@@ -85,3 +83,46 @@
     color: $marigold
     font-size: 18px
     font-weight: 600
+
+  &__service-see-more
+    display: block
+    margin-top: 24px
+    text-align: right
+
+  &__service-container
+    position: relative
+
+  &__service-index
+    column-count: 3
+    margin-top: 32px
+    padding: 12px
+
+  &__prev-btn,
+  &__next-btn
+    position: absolute
+    top: 160px
+    z-index: 96
+    border-radius: 50%
+    width: 42px
+    height: 42px
+
+    &:hover
+      cursor: pointer
+
+    &:focus
+      outline: none
+
+  &__prev-btn
+    left: -100px
+
+  &__next-btn
+    right: -100px
+
+  &__service-link
+    display: block
+    margin-bottom: 4px
+    color: $marigold
+    font-size: 18px
+
+  &__service-text
+    display: inline-block

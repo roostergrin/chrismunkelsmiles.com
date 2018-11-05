@@ -1,11 +1,11 @@
-<template lang='pug' src='./tab-treatments-restorations.pug'></template>
+<template lang='pug' src='./blog.pug'></template>
 
 <script>
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import Icon from 'components/icon/icon'
 
 export default {
-  props: ['props'],
+  name: 'blog',
   data () {
     return {
       swiperOption: {
@@ -15,18 +15,29 @@ export default {
           delay: 5000
         },
         navigation: {
-          prevEl: '.tab-treatments-restorations__prev-btn',
-          nextEl: '.tab-treatments-restorations__next-btn'
+          prevEl: '.pages-blog__prev-btn',
+          nextEl: '.pages-blog__next-btn'
         }
       },
+      allBlogs: [],
       loading: false,
-      allBlogs: []
+      activeCategories: [],
+      activeTags: []
     }
   },
   computed: {
+    blog () {
+      var blogId = this.$route.params.postId
+      return this.$store.state.filter[blogId]
+    },
     blogs () {
       return this.$store.state.blog
     }
+  },
+  components: {
+    swiper,
+    swiperSlide,
+    Icon
   },
   methods: {
     truncateService (i) {
@@ -38,26 +49,14 @@ export default {
       } else {
         return text
       }
-    },
-    truncatePost (i) {
-      let text = i
-      let truncText = []
-      if (text.length >= 480) {
-        truncText = text.slice(0, 480)
-        return truncText + '...'
-      } else {
-        return text
-      }
     }
-  },
-  components: {
-    swiper,
-    swiperSlide,
-    Icon
   },
   created () {
     let fillBlogs = setInterval(() => {
       if (this.blogs.length > 1) {
+        console.log(this.blogs[0])
+        this.activeCategories = this.blog.categories[0]
+        this.activeTags = this.blog.tags[0]
         this.loading = true
         this.allBlogs = this.blogs
         clearInterval(fillBlogs)

@@ -10,6 +10,7 @@ import AboutUs from '@/pages/about-us/about-us'
 import Treatments from '@/pages/treatments/treatments'
 import FAQ from '@/pages/faq/faq'
 import Contact from '@/pages/contact/contact'
+import Blog from '@/pages/blog/blog'
 import PageNotFound from '@/pages/404/404'
 import scrollBehavior from '@/shared/functionality/scroll-behavior'
 import Styleguide from '@/styleguide/styleguide'
@@ -144,6 +145,11 @@ const router = new VueRouter({
       navigation: true,
       thumbnail: '/static/ContactThumb.png',
       component: Contact
+    },
+    {
+      path: '/:postId',
+      name: 'Blog',
+      component: Blog
     },
     {
       path: '/styleguide',

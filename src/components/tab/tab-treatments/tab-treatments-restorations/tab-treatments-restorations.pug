@@ -1,14 +1,32 @@
-.tab-treatments-restorations
+.tab-treatments-restorations(v-if='loading')
   .tab-treatments-restorations__background
     .tab-treatments-restorations__container
       .tab-treatments-restorations__content-box
         .tab-treatments-restorations__title(v-html='props.title')
         .tab-treatments-restorations__content(v-html='props.content')
         .tab-treatments-restorations__blog-container
-          .tab-treatments-restorations__blog(v-for='(blog, i) in blog', v-if='blog.categories.includes(4)')
-            .tab-treatments-restorations__col-blog-image
+          .tab-treatments-restorations__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(10)')
+            router-link.tab-treatments-restorations__col-blog-image(:to='blog.slug')
               .tab-treatments-restorations__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
             .tab-treatments-restorations__col-blog-text
-              .tab-treatments-restorations__blog-title(v-html='blog.acf.blog_posts.title')
-              .tab-treatments-restorations__blog-summary(v-html='blog.acf.blog_posts.summary')
-      
+              router-link.tab-treatments-restorations__blog-title(v-html='blog.acf.blog_posts.title', :to='blog.slug')
+              .tab-treatments-restorations__blog-summary(v-html='truncatePost(blog.acf.blog_posts.content)')
+              router-link.tab-treatments-restorations__blog-see-more(:to='blog.slug') See More...
+        .tab-treatments-restorations__services-title More Services
+        .tab-treatments-restorations__service-container
+          swiper.tab-treatments-restorations__services(:options='swiperOption')
+            swiperSlide.tab-treatments-restorations__service(v-for='(blog, j) in allBlogs', :key='j', v-if='blog.categories.includes(4) && !blog.tags.includes(10)')
+              router-link.tab-treatments-restorations__service-image-container(:to='blog.slug')
+                .tab-treatments-restorations__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+              router-link.tab-treatments-restorations__service-title(v-html='blog.acf.blog_posts.title', :to='blog.slug')
+              .tab-treatments-restorations__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
+              router-link.tab-treatments-restorations__service-see-more(:to='blog.slug') See More...
+          .tab-treatments-restorations__prev-btn
+            Icon(name='LeftCarot')
+          .tab-treatments-restorations__next-btn
+            Icon(name='RightCarot')
+        .tab-treatments-restorations__service-index
+          router-link.tab-treatments-restorations__service-link(v-for='(blog, k) in allBlogs', :key='k', v-if='blog.categories.includes(4)', :to='blog.slug')
+            .tab-treatments-restorations__service-text(v-html='blog.acf.blog_posts.title')
+            span  +
+        
