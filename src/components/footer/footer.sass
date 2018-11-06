@@ -37,7 +37,11 @@
   &__address,
   &__phone-number
     display: block
+    transition: all 0.4s ease-in-out
     font-size: 14px
+
+    &:hover
+      color: $tussok
 
   &__logo-box
     margin: 0 auto
@@ -62,3 +66,9 @@
     svg
       width: 30px
       height: 30px
+
+    &:hover
+      cursor: pointer
+
+  .fade-in-nav
+    @include fade-in-nav

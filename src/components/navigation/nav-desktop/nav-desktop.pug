@@ -10,7 +10,7 @@
           .nav-desktop__calendar-icon
             Icon(name='Calendar')
           .nav-desktop__calendar-text Book Online Now
-        .nav-desktop__icon-box
+        a.nav-desktop__icon-box(:href='props.acf.nav.form_link')
           .nav-desktop__form-icon
             Icon(name='NavForm')
           .nav-desktop__form-text Download Patient Forms
@@ -33,7 +33,7 @@
         .nav-desktop__home-icons
           a.nav-desktop__phone(:href='props.acf.nav.phone_link')
             Icon(name='Phone')
-          .nav-desktop__form
+          a.nav-desktop__form(:href='props.acf.nav.form_link', target='_blank')
             Icon(name='NavForm')
           .nav-desktop__calendar(@click='toggleModalContact')
             Icon(name='Calendar')
@@ -56,19 +56,19 @@
           .nav-desktop__active-box
           .nav-desktop__active-box
             .nav-desktop__active-contact
-              .nav-desktop__active-book-appointment Book an Appointment
+              .nav-desktop__active-book-appointment(@click='toggleModalContact') Book an Appointment
               .nav-desktop__active-address(v-html='props.acf.nav.address')
               .nav-desktop__active-phone(v-html='props.acf.nav.phone')
       .nav-desktop__active-footer-line
         .nav-desktop__active-social-media-container
           .nav-desktop__active-social-media
-            .nav-desktop__active-facebook
+            a.nav-desktop__active-facebook(:href='props.acf.nav.facebook_link', target='_blank')
               Icon(name='FooterFacebook')
-            .nav-desktop__active-phone
+            a.nav-desktop__active-phone(:href='props.acf.nav.phone_link')
               Icon(name='FooterPhone')
-            .nav-desktop__active-form
+            a.nav-desktop__active-form(:href='props.acf.nav.form_link', target='_blank')
               Icon(name='FooterForm')
-            .nav-desktop__active-calendar
+            .nav-desktop__active-calendar(@click='toggleModalContact')
               Icon(name='FooterCalendar')
   transition(name='fade-in-nav')
     ModalContact(v-if='activeModal', @hideModalContact='toggleModalContact')

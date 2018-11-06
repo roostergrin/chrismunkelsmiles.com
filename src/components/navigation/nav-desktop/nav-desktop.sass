@@ -141,6 +141,9 @@
       &::after
         transform: rotate(-45deg)
 
+      &:hover
+        cursor: pointer
+
     &--line-one, &--line-two, &--line-three
       transition: 0.4s
       margin: 6px 0
@@ -250,20 +253,24 @@
 
   &__active-link
     display: block
+    transition: all 0.4s ease-in-out
     margin: 6px 0
     font-size: 20px
     font-weight: 600
 
     &:hover
       cursor: pointer
+      color: $tussok
 
   &__active-sublink
     display: block
+    transition: all 0.4s ease-in-out
     margin: 6px 0
     font-size: 18px
 
     &:hover
       cursor: pointer
+      color: $tussok
 
   &__active-book-appointment
     display: inline-block
@@ -273,6 +280,9 @@
     padding: 10px 27px
     color: $white
     font-size: 18px
+
+    &:hover
+      cursor: pointer
 
   &__active-footer-line
     position: absolute
@@ -302,6 +312,14 @@
     right: 32px
     background: $white
 
+  &__active-address,
+  &__active-phone
+    transition: all 0.4s ease-in-out
+
+    &:hover
+      cursor: pointer
+      color: $tussok
+
   &__active-facebook,
   &__active-phone,
   &__active-form,
@@ -310,6 +328,9 @@
     svg
       width: 20px
       height: 20px
+
+    &:hover
+      cursor: pointer
 
   .fade-in-nav
     @include fade-in-nav

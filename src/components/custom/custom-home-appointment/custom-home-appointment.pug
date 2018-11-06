@@ -5,8 +5,12 @@
         .custom-home-appointment__col-left
           .custom-home-appointment__col-left--title(v-html='props.left_treatment.title')
           .custom-home-appointment__col-left--image(:style='"backgroundImage: url(" + props.left_treatment.image + ");"')
+          .custom-home-appointment__col-left--content(v-html='props.left_treatment.content')
         .custom-home-appointment__col-right
           .custom-home-appointment__col-right--image(:style='"backgroundImage: url(" + props.right_treatment.image + ");"')
           .custom-home-appointment__col-right--title(v-html='props.right_treatment.title')
+          .custom-home-appointment__col-right--content(v-html='props.right_treatment.content')
       center
-        .custom-home-appointment__button Book an Appointment
+        .custom-home-appointment__button(@click='toggleModalContact') Book an Appointment
+  transition(name='fade-in-nav')
+    ModalContact(v-if='activeModal', @hideModalContact='toggleModalContact')

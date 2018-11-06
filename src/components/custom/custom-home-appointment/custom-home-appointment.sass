@@ -16,12 +16,12 @@
     justify-content: flex-end
     margin-right: 12px
     width: calc(50% - 12px)
-    color: $tussok
 
     &--title
       position: absolute
       top: 120px
       left: -84px
+      transition: all 0.4s ease-in-out
       text-align: right
       color: $tussok
       font-size: 64px
@@ -32,7 +32,26 @@
       width: 357px
       height: 478px
 
+    &--content
+      position: absolute
+      top: 0
+      left: 0
+      transition: all 0.4s ease-in-out
+      opacity: 0
+      width: 180px
+
+    &:hover
+      cursor: pointer
+
+      .custom-home-appointment__col-left--title
+        transform: translateX(300px)
+
+      .custom-home-appointment__col-left--content
+        opacity: 1
+
+
   &__col-right
+    position: relative
     margin-left: 12px
     width: calc(50% - 12px)
 
@@ -43,12 +62,29 @@
       height: 296px
 
     &--title
+      transition: all 0.4s ease-in-out
       margin-top: 10px
       margin-left: 100px
       text-align: left
       color: $tussok
       font-size: 64px
       font-style: italic
+
+    &--content
+      position: absolute
+      top: 390px
+      left: 0
+      transition: all 0.4s ease-in-out
+      opacity: 0
+
+    &:hover
+      cursor: pointer
+
+      .custom-home-appointment__col-right--title
+        transform: translateY(-160px)
+
+      .custom-home-appointment__col-right--content
+        opacity: 1
 
   &__button
     display: inline-block
@@ -59,3 +95,9 @@
     background: $marigold
     padding: 8px 36px
     color: $white
+
+    &:hover
+      cursor: pointer
+
+  .fade-in-nav
+    @include fade-in-nav

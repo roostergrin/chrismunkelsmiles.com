@@ -5,10 +5,10 @@
         .custom-faq-row__title(v-html='props.title')
         .custom-faq-row__content(v-html='props.content')
         .custom-faq-row__rows
-          .custom-faq-row__row(v-for='(row, i) in props.rows', :key='i')
-            .custom-faq-row__col-image
-              .custom-faq-row__image(:style='"backgroundImage: url(" + row.image + ");"')
+          .custom-faq-row__row(v-for='(row, i) in allBlogs', :key='i', v-if='row.categories.includes(12)')
+            router-link.custom-faq-row__col-image(:to='row.slug')
+              .custom-faq-row__image(:style='"backgroundImage: url(" + row.acf.blog_posts.image + ");"')
             .custom-faq-row__col-text
-              .custom-faq-row__row-title(v-html='row.title')
-              .custom-faq-row__description(v-html='row.description')
-              .custom-faq-row__see-more See More...
+              router-link.custom-faq-row__row-title(v-html='row.acf.blog_posts.title', :to='row.slug')
+              .custom-faq-row__description(v-html='truncatePost(row.acf.blog_posts.content)')
+              router-link.custom-faq-row__see-more(:to='row.slug') See More...

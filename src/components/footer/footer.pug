@@ -12,11 +12,15 @@
           .footer__logo(style='background-image: url(/static/MunkelLogo.png)')
       .footer__col-right
         .footer__social-box
-          .footer__facebook
+          a.footer__facebook(:href='props.acf.footer.facebook_link', target='_blank')
             Icon(name='FooterFacebook')
-          .footer__phone
+          a.footer__phone(:href='props.acf.footer.phone_link')
             Icon(name='FooterPhone')
           .footer__form
             Icon(name='FooterForm')
-          .footer__calendar
+          .footer__calendar(@click='toggleModalContact')
             Icon(name='FooterCalendar')
+              
+  transition(name='fade-in-nav')
+    ModalContact(v-if='activeModal', @hideModalContact='toggleModalContact')
+  
