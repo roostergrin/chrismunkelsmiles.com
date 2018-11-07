@@ -1,12 +1,22 @@
 .tab-about-team
   margin-top: 272px
 
+  @media(max-width: $screen-sm)
+    margin-top: 0
+
   &__container
     @extend .container
+
+    @media(max-width: $screen-sm)
+      margin: 0
+      padding: 0 30px
 
   &__content-box
     border: 1px solid $marigold
     padding-bottom: 64px
+
+    @media(max-width: $screen-sm)
+      padding-bottom: 16px
 
   &__header-image
     @extend .img-norm
@@ -16,6 +26,11 @@
     width: 937px
     height: 414px
 
+    @media(max-width: $screen-sm)
+      margin-top: 0
+      width: 100%
+      height: 200px
+
   &__title
     margin-bottom: 48px
     text-align: center
@@ -23,18 +38,32 @@
     font-size: 64px
     font-style: italic
 
+    @media(max-width: $screen-sm)
+      margin-bottom: 32px
+
   &__content
     margin: 0 auto
     margin-bottom: 48px
     width: 937px
 
+    @media(max-width: $screen-sm)
+      padding: 0 30px
+      width: 100%
+
   &__members
     margin: 0 auto
     max-width: 760px
 
+    @media(max-width: $screen-sm)
+      padding: 0 30px
+
   &__member
     display: flex
     margin-top: -54px
+
+    @media(max-width: $screen-sm)
+      display: block
+      margin-top: 0
 
     &:first-child
       margin-top: 0
@@ -44,6 +73,9 @@
 
       .tab-about-team__name
         text-align: right
+
+        @media(max-width: $screen-sm)
+          text-align: left
 
       .tab-about-team__col-text
         padding-right: 25px
@@ -55,13 +87,29 @@
     justify-content: center
     width: 50%
 
+    @media(max-width: $screen-sm)
+      display: block
+      width: 100%
+
   &__image
     @extend .img-norm
     width: 360px
     height: 472px
+
+    @media(max-width: $screen-sm)
+      width: 100%
+      height: 300px
 
   &__name
     margin-bottom: 18px
     color: $marigold
     font-size: 48px
     font-style: italic
+
+    @media(max-width: $screen-sm)
+      margin-top: 16px
+      margin-bottom: 16px
+
+  &__bio
+    @media(max-width: $screen-sm)
+      margin-bottom: 16px

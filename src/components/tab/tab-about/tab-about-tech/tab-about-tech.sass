@@ -4,6 +4,10 @@
     @extend .container
     margin-top: 64px
 
+    @media(max-width: $screen-sm)
+      margin: 0
+      padding: 0 30px
+
   &__content-box
     padding-bottom: 64px
 
@@ -22,10 +26,17 @@
     font-size: 64px
     font-style: italic
 
+    @media(max-width: $screen-sm)
+      margin-bottom: 32px
+
   &__content
     margin: 0 auto
     margin-bottom: 48px
     width: 937px
+
+    @media(max-width: $screen-sm)
+      margin-bottom: 32px
+      width: 100%
 
   &__rows
     margin: 0 auto
@@ -35,6 +46,10 @@
     display: flex
     margin-top: -54px
 
+    @media(max-width: $screen-sm)
+      display: block
+      margin-top: 0
+
     &:first-child
       margin-top: 0
 
@@ -43,6 +58,9 @@
 
       .tab-about-tech__row-title
         text-align: right
+
+        @media(max-width: $screen-sm)
+          text-align: left
 
       .tab-about-tech__col-text
         padding-right: 25px
@@ -54,10 +72,18 @@
     justify-content: center
     width: 50%
 
+    @media(max-width: $screen-sm)
+      display: block
+      width: 100%
+
   &__image
     @extend .img-norm
     width: 360px
     height: 472px
+
+    @media(max-width: $screen-sm)
+      margin: 16px 0
+      height: 350px
 
   &__row-title
     margin-bottom: 18px

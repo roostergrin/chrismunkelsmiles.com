@@ -3,21 +3,24 @@
   &__background
     padding-top: 32px
 
+    @media(max-width: $screen-sm)
+      padding-top: 0
+
   &__container
     @extend .container
+
+    @media(max-width: $screen-sm)
+      margin: 0
+      padding: 0 30px
 
   &__doctor-image
     @extend .img-norm
     width: 360px
     height: 540px
 
-  &__bio-border
-    position: absolute
-    top: 0
-    left: 0
-    border: 1px solid $marigold
-    width: 100%
-    height: 100%
+    @media(max-width: $screen-sm)
+      width: 100%
+      height: 440px
 
   &__bio-content
     position: relative
@@ -31,6 +34,25 @@
       display: inline-block
       max-width: 280px
 
+    @media(max-width: $screen-sm)
+      bottom: 0
+      left: 0
+      margin: 0
+      padding: 0 30px
+      max-width: none
+
+  &__bio-border
+    position: absolute
+    top: 0
+    left: 0
+    border: 1px solid $marigold
+    width: 100%
+    height: 100%
+
+    @media(max-width: $screen-sm)
+      padding-bottom: 32px
+      height: calc(100% + 32px)
+
   &__name
     position: relative
     margin-top: -70px
@@ -39,6 +61,11 @@
     font-size: 36px
     font-style: italic
 
+    @media(max-width: $screen-sm)
+      margin: 32px 0
+      background: none
+      padding-top: 32px
+
   &__image
     @extend .img-norm
     position: absolute
@@ -46,3 +73,10 @@
     bottom: -150px
     width: 455px
     height: 303px
+
+    @media(max-width: $screen-sm)
+      position: relative
+      right: 0
+      bottom: 0
+      margin-top: 32px
+      width: 100%

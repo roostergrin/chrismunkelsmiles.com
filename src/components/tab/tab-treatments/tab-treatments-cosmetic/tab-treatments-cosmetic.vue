@@ -17,6 +17,20 @@ export default {
         navigation: {
           prevEl: '.tab-treatments-cosmetic__prev-btn',
           nextEl: '.tab-treatments-cosmetic__next-btn'
+        },
+        pagination: {
+          el: '.tab-treatments-cosmetic__pagination',
+          clickable: true,
+          bulletClass: 'tab-treatments-cosmetic__bullet',
+          bulletActiveClass: 'tab-treatments-cosmetic__bullet-active',
+          renderBullet: function (index, bulletClass) {
+            return '<div class="' + bulletClass + '"></div>'
+          }
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 1
+          }
         }
       },
       loading: false,

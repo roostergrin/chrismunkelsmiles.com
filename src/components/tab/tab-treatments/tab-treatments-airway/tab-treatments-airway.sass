@@ -4,10 +4,17 @@
     @extend .container
     margin-top: 64px
 
+    @media(max-width: $screen-sm)
+      margin-top: 0
+      padding: 0 30px
+
   &__content-box
     margin: 0 auto
     padding-bottom: 64px
     max-width: 860px
+
+    @media(max-width: $screen-sm)
+      padding-bottom: 0
 
   &__title
     margin-bottom: 48px
@@ -16,10 +23,17 @@
     font-size: 64px
     font-style: italic
 
+    @media(max-width: $screen-sm)
+      margin-bottom: 32px
+
   &__content
     margin: 0 auto
     margin-bottom: 48px
     width: 743px
+
+    @media(max-width: $screen-sm)
+      margin-bottom: 32px
+      width: 100%
 
   &__blog-container
     margin: 0 auto
@@ -29,6 +43,11 @@
     display: flex
     margin-top: -54px
 
+    @media(max-width: $screen-sm)
+      display: block
+      margin-top: 0
+      margin-bottom: 32px
+
     &:first-child
       margin-top: 0
 
@@ -37,6 +56,9 @@
 
       .tab-treatments-airway__blog-title
         text-align: right
+
+        @media(max-width: $screen-sm)
+          text-align: left
 
       .tab-treatments-airway__col-blog-text
         padding-right: 25px
@@ -48,16 +70,29 @@
     justify-content: center
     width: 50%
 
+    @media(max-width: $screen-sm)
+      display: block
+      width: 100%
+
   &__blog-image
     @extend .img-norm
     width: 360px
     height: 472px
+
+    @media(max-width: $screen-sm)
+      margin-bottom: 16px
+      width: 100%
+      height: 360px
 
   &__blog-title
     margin-bottom: 18px
     color: $marigold
     font-size: 48px
     font-style: italic
+
+    @media(max-width: $screen-sm)
+      display: block
+      margin-bottom: 16px
 
   &__blog-see-more
     text-align: right
@@ -69,6 +104,9 @@
     font-size: 48px
     font-style: italic
 
+    @media(max-width: $screen-sm)
+      margin-top: 32px
+
   &__service
     padding: 12px
 
@@ -77,6 +115,9 @@
     margin-bottom: 18px
     width: 100%
     height: 166px
+
+    @media(max-width: $screen-sm)
+      height: 240px
 
   &__service-title
     margin-bottom: 24px
@@ -97,6 +138,34 @@
     margin-top: 32px
     padding: 12px
 
+    @media(max-width: $screen-sm)
+      column-count: 2
+
+  &__container-pagination
+    display: flex
+    position: relative
+    justify-content: center
+
+  &__pagination
+    display: flex
+    position: relative
+
+  &__bullet
+    margin: 32px 5px 0
+    border: 1px solid $black
+    border-radius: 50%
+    width: 10px
+    height: 10px
+
+    &:focus
+      outline: none
+
+    &:hover
+      cursor: pointer
+
+  &__bullet-active
+    background-color: $black
+
   &__prev-btn,
   &__next-btn
     position: absolute
@@ -105,6 +174,9 @@
     border-radius: 50%
     width: 42px
     height: 42px
+
+    @media(max-width: $screen-sm)
+      display: none
 
     &:hover
       cursor: pointer

@@ -5,6 +5,9 @@
     position: relative
     height: 563px
 
+    @media(max-width: $screen-sm)
+      height: 210px
+
   &__title
     position: absolute
     bottom: -36px
@@ -13,3 +16,9 @@
     color: $tussok
     font-size: 250px
     font-style: italic
+
+    @media(max-width: $screen-sm)
+      bottom: 30px
+      left: 20px
+      line-height: 48px
+      font-size: 48px

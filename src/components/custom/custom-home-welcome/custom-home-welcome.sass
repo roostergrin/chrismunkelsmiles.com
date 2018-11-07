@@ -6,6 +6,12 @@
     margin-top: 108px
     margin-bottom: 180px
 
+    @media(max-width: $screen-sm)
+      display: block
+      margin: 32px 0
+      padding-right: 30px
+      padding-left: 30px
+
   &__black-bar
     position: absolute
     top: 90px
@@ -14,15 +20,31 @@
     width: 2px
     height: 150px
 
+    @media(max-width: $screen-sm)
+      display: none
+
   &__title
     line-height: 64px
     color: $tussok
     font-size: 64px
     font-style: italic
 
+    @media(max-width: $screen-sm)
+      margin-bottom: 32px
+      text-align: center
+      line-height: 48px
+      font-size: 48px
+
     span
       margin-left: 120px
+
+      @media(max-width: $screen-sm)
+        margin-left: 0
 
   &__content
     margin-top: -16px
     margin-left: 300px
+
+    @media(max-width: $screen-sm)
+      margin-top: 0
+      margin-left: 0

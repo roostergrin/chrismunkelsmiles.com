@@ -1,0 +1,33 @@
+.nav-mobile(v-if='props')
+  .nav-mobile__container
+    router-link.nav-mobile__logo(to='/')
+      .nav-mobile__logo-image(style='background-image: url(/static/MunkelLogo.png)')
+    .nav-mobile__hamburger(@click='toggleMenu', v-show='!active')
+      .nav-mobile__hamburger--lines
+        .nav-mobile__hamburger--line-one
+        .nav-mobile__hamburger--line-two
+        .nav-mobile__hamburger--line-three
+    .nav-mobile__hamburger--cross(@click='toggleMenu', v-show='active')
+        
+  .nav-mobile__drawer(v-show='active')
+  .nav-mobile__drawer-container(v-show='active') 
+  .nav-mobile__links(v-show='active')
+    .nav-mobile__logo-drawer(style='background-image: url(/static/MunkelLogo.png)')
+    router-link.nav-mobile__link(v-for='(link, i) in links', :key='i', :to='link.path', v-if='link.mobile')
+      .nav-mobile__link-text(v-html='link.name', @click='toggleMenu')
+    .nav-mobile__seperator
+    a.nav-mobile__phone(v-html='props.acf.nav.phone', :href='props.acf.nav.phone_link')
+    a.nav-mobile__address(v-html='props.acf.nav.address', :href='props.acf.nav.address_link', target='_blank')
+    .nav-mobile__cta-container
+      a.nav-mobile__cta-facebook(:href='props.acf.nav.facebook_link', target='_blank')
+        Icon(name='FooterFacebook')
+      a.nav-mobile__cta-phone(:href='props.acf.nav.phone_link')
+        Icon(name='FooterPhone')
+      a.nav-mobile__cta-form(:href='props.acf.nav.form_link', target='_blank')
+        Icon(name='FooterForm')
+      .nav-mobile__cta-calendar(@click='toggleModalContact')
+        Icon(name='FooterCalendar')
+          
+  transition(name='fade-in-nav')
+    ModalContact(v-if='activeModal', @hideModalContact='toggleModalContact')
+        

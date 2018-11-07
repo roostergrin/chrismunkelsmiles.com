@@ -1,6 +1,12 @@
 .hero-home
   position: relative
 
+  &__video
+    width: 100%
+
+    @media(max-width: $screen-sm)
+      display: none
+
   &__overlay
     position: absolute
     top: 0
@@ -9,10 +15,17 @@
     width: 100%
     height: 100%
 
-  &__video
-    width: 100%
-
   &__waypoint-scroll
     position: absolute
     top: 400px
     left: 0
+
+  &__image
+    @extend .img-norm
+    display: none
+    width: 100%
+    height: 240px
+
+
+    @media(max-width: $screen-sm)
+      display: block

@@ -21,12 +21,13 @@
               router-link.tab-treatments-cosmetic__service-title(v-html='blog.acf.blog_posts.title', :to='blog.slug')
               .tab-treatments-cosmetic__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
               router-link.tab-treatments-cosmetic__service-see-more(:to='blog.slug') See More...
+          .tab-treatments-cosmetic__container-pagination
+            .tab-treatments-cosmetic__pagination(slot='pagination')
           .tab-treatments-cosmetic__prev-btn
             Icon(name='LeftCarot')
           .tab-treatments-cosmetic__next-btn
             Icon(name='RightCarot')
         .tab-treatments-cosmetic__service-index
           router-link.tab-treatments-cosmetic__service-link(v-for='(blog, k) in allBlogs', :key='k', v-if='blog.categories.includes(3)', :to='blog.slug')
-            .tab-treatments-cosmetic__service-text(v-html='blog.acf.blog_posts.title')
-            span  +
+            .tab-treatments-cosmetic__service-text {{ blog.acf.blog_posts.title }} +
         

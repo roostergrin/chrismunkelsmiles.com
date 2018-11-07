@@ -17,6 +17,20 @@ export default {
         navigation: {
           prevEl: '.tab-treatments-restorations__prev-btn',
           nextEl: '.tab-treatments-restorations__next-btn'
+        },
+        pagination: {
+          el: '.tab-treatments-restorations__pagination',
+          clickable: true,
+          bulletClass: 'tab-treatments-restorations__bullet',
+          bulletActiveClass: 'tab-treatments-restorations__bullet-active',
+          renderBullet: function (index, bulletClass) {
+            return '<div class="' + bulletClass + '"></div>'
+          }
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 1
+          }
         }
       },
       loading: false,

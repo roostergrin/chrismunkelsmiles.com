@@ -7,6 +7,11 @@
     @extend .container--flex
     margin-top: 180px
 
+    @media(max-width: $screen-sm)
+      margin: 0
+      margin-top: 32px
+      padding: 0 30px
+
   &__giant-title
     position: absolute
     top: -160px
@@ -19,20 +24,45 @@
       top: -190px
       left: 420px
 
+    @media(max-width: $screen-sm)
+      display: none
+
+  &__mobile-giant-title
+    display: none
+    margin-top: 32px
+    width: 100%
+    text-align: center
+    font-family: italic
+    font-size: 48px
+
+    @media(max-width: $screen-sm)
+      display: block
+
   &__row
     display: flex
     margin-top: 180px
     width: 100%
 
+    @media(max-width: $screen-sm)
+      display: block
+      margin-top: 32px
+
   &__col-left
     margin-right: 12px
     width: calc(50% - 12px)
+
+    @media(max-width: $screen-sm)
+      margin-right: 0
+      width: 100%
 
   &__left-top
     display: flex
     position: relative
     justify-content: flex-end
     margin-bottom: 24px
+
+    @media(max-width: $screen-sm)
+      display: block
 
     &--title
       position: absolute
@@ -47,10 +77,27 @@
         position: relative
         right: 90px
 
+      @media(max-width: $screen-sm)
+        display: none
+
+    &--mobile-title
+      display: none
+      margin: 16px 0
+      text-align: center
+      color: $tussok
+      font-size: 32px
+      font-style: italic
+
+      @media(max-width: $screen-sm)
+        display: block
+
     &--image
       @extend .img-norm
       width: 260px
       height: 260px
+
+      @media(max-width: $screen-sm)
+        width: 100%
 
     &--content
       position: absolute
@@ -60,15 +107,27 @@
       opacity: 0
       width: 280px
 
+      @media(max-width: $screen-sm)
+        display: none
+
     &:hover
       cursor: pointer
 
       .custom-home-why__left-top--title
         transform: translateX(290px)
 
+        @media(max-width: $screen-sm)
+          transform: none
+
       .custom-home-why__left-top--content
         transform: translateY(-10px)
         opacity: 1
+
+    &--mobile-content
+      display: none
+
+      @media(max-width: $screen-sm)
+        display: block
 
   &__left-bottom
     position: relative
@@ -84,10 +143,20 @@
         position: relative
         left: 130px
 
+        @media(max-width: $screen-sm)
+          left: 0
+
+      @media(max-width: $screen-sm)
+        margin: 16px 0
+        font-size: 32px
+
     &--image
       @extend .img-norm
       width: 100%
       height: 322px
+
+      @media(max-width: $screen-sm)
+        height: 260px
 
     &--content
       position: absolute
@@ -95,19 +164,33 @@
       transition: all 0.4s ease-in-out
       opacity: 0
 
+      @media(max-width: $screen-sm)
+        position: relative
+        top: 0
+        opacity: 1
+
     &:hover
       cursor: pointer
 
       .custom-home-why__left-bottom--title
         transform: translateY(-160px)
 
+        @media(max-width: $screen-sm)
+          transform: none
+
       .custom-home-why__left-bottom--content
         transform: translateY(-10px)
         opacity: 1
 
+        @media(max-width: $screen-sm)
+          transform: none
+
 
   &__col-right
     position: relative
+
+    @media(max-width: $screen-sm)
+      margin-top: 24px
 
     &--title
       transition: all 0.4s ease-in-out
@@ -120,17 +203,34 @@
         position: relative
         left: 100px
 
+        @media(max-width: $screen-sm)
+          left: 0
+
+      @media(max-width: $screen-sm)
+        margin: 16px 0
+        font-size: 32px
+
     &--image
       @extend .img-norm
       margin-top: 100px
       width: 559px
       height: 464px
 
+      @media(max-width: $screen-sm)
+        margin-top: 0
+        width: 100%
+        height: 260px
+
     &--content
       position: absolute
       top: 588px
       transition: all 0.4s ease-in-out
       opacity: 0
+
+      @media(max-width: $screen-sm)
+        position: relative
+        top: 0
+        opacity: 1
 
     &:hover
       cursor: pointer
@@ -150,3 +250,6 @@
     background: $marigold
     padding: 8px 36px
     color: $white
+
+    @media(max-width: $screen-sm)
+      margin: 32px auto

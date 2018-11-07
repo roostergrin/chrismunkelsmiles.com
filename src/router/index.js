@@ -24,7 +24,8 @@ const router = new VueRouter({
       path: '/',
       name: 'Home',
       navigation: false,
-      component: Home
+      component: Home,
+      mobile: true
     },
     {
       path: '/about-us',
@@ -32,6 +33,7 @@ const router = new VueRouter({
       navigation: true,
       thumbnail: '/static/AboutUsThumb.png',
       component: AboutUs,
+      mobile: true,
       children: [
         {
           path: '/about-us#doctor',
@@ -81,6 +83,7 @@ const router = new VueRouter({
       navigation: true,
       thumbnail: '/static/TreatmentThumb.png',
       component: Treatments,
+      mobile: true,
       children: [
         {
           path: '/treatments#cleaning-prevention',
@@ -137,14 +140,16 @@ const router = new VueRouter({
       name: 'FAQs',
       navigation: true,
       thumbnail: '/static/FAQThumb.png',
-      component: FAQ
+      component: FAQ,
+      mobile: true
     },
     {
       path: '/contact',
       name: 'Contact',
       navigation: true,
       thumbnail: '/static/ContactThumb.png',
-      component: Contact
+      component: Contact,
+      mobile: true
     },
     {
       path: '/:postId',

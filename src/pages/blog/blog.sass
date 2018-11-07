@@ -1,13 +1,23 @@
 .pages-blog
   padding-top: 137px
 
+  @media(max-width: $screen-sm)
+    padding-top: 84px
+
   &__hero
     @extend .img-norm
     width: 100%
     height: 560px
 
+    @media(max-width: $screen-sm)
+      height: 210px
+
   &__background
     position: relative
+
+    @media(max-width: $screen-sm)
+      margin: 0
+      padding: 0 30px
 
   &__top-back-treatment
     display: flex
@@ -15,6 +25,12 @@
     top: 40px
     left: 160px
     align-items: center
+
+    @media(max-width: $screen-sm)
+      position: relative
+      top: 0
+      left: 0
+      margin-top: 16px
 
     &:hover
       cursor: pointer
@@ -35,10 +51,16 @@
     font-size: 48px
     font-style: italic
 
+    @media(max-width: $screen-sm)
+      padding-top: 32px
+
   &__bottom-back-treatment
     display: block
     margin-top: 64px
     color: $marigold
+
+    @media(max-width: $screen-sm)
+      margin-top: 32px
 
     &:hover
       cursor: pointer
@@ -61,6 +83,9 @@
     margin-bottom: 18px
     width: 100%
     height: 166px
+
+    @media(max-width: $screen-sm)
+      height: 240px
 
   &__service-title
     margin-bottom: 24px
@@ -85,6 +110,34 @@
     padding: 12px
     max-width: 800px
 
+    @media(max-width: $screen-sm)
+      column-count: 2
+
+  &__container-pagination
+    display: flex
+    position: relative
+    justify-content: center
+
+  &__pagination
+    display: flex
+    position: relative
+
+  &__bullet
+    margin: 32px 5px 0
+    border: 1px solid $black
+    border-radius: 50%
+    width: 10px
+    height: 10px
+
+    &:focus
+      outline: none
+
+    &:hover
+      cursor: pointer
+
+  &__bullet-active
+    background-color: $black
+
   &__prev-btn,
   &__next-btn
     position: absolute
@@ -93,6 +146,9 @@
     border-radius: 50%
     width: 42px
     height: 42px
+
+    @media(max-width: $screen-sm)
+      display: none
 
     &:hover
       cursor: pointer

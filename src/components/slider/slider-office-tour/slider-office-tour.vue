@@ -19,6 +19,11 @@ export default {
         navigation: {
           prevEl: '.slider-office-tour__arrow-prev',
           nextEl: '.slider-office-tour__arrow-next'
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 1
+          }
         }
       }
     }

@@ -5,6 +5,7 @@
         .custom-home-appointment__col-left
           .custom-home-appointment__col-left--title(v-html='props.left_treatment.title')
           .custom-home-appointment__col-left--image(:style='"backgroundImage: url(" + props.left_treatment.image + ");"')
+          .custom-home-appointment__col-left--mobile-title(v-html='props.left_treatment.title')
           .custom-home-appointment__col-left--content(v-html='props.left_treatment.content')
         .custom-home-appointment__col-right
           .custom-home-appointment__col-right--image(:style='"backgroundImage: url(" + props.right_treatment.image + ");"')

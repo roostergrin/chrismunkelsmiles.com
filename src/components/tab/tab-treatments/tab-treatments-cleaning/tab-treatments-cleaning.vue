@@ -17,6 +17,20 @@ export default {
         navigation: {
           prevEl: '.tab-treatments-cleaning__prev-btn',
           nextEl: '.tab-treatments-cleaning__next-btn'
+        },
+        pagination: {
+          el: '.tab-treatments-cleaning__pagination',
+          clickable: true,
+          bulletClass: 'tab-treatments-cleaning__bullet',
+          bulletActiveClass: 'tab-treatments-cleaning__bullet-active',
+          renderBullet: function (index, bulletClass) {
+            return '<div class="' + bulletClass + '"></div>'
+          }
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 1
+          }
         }
       },
       loading: false,

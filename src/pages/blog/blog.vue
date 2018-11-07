@@ -17,6 +17,20 @@ export default {
         navigation: {
           prevEl: '.pages-blog__prev-btn',
           nextEl: '.pages-blog__next-btn'
+        },
+        pagination: {
+          el: '.pages-blog__pagination',
+          clickable: true,
+          bulletClass: 'pages-blog__bullet',
+          bulletActiveClass: 'pages-blog__bullet-active',
+          renderBullet: function (index, bulletClass) {
+            return '<div class="' + bulletClass + '"></div>'
+          }
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 1
+          }
         }
       },
       allBlogs: [],
