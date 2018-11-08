@@ -19,5 +19,6 @@
           .custom-home-why__col-right--image(:style='"backgroundImage: url(" + props.right_treatment.image + ");"')
           .custom-home-why__col-right--title(v-html='props.right_treatment.title')
           .custom-home-why__col-right--content(v-html='props.right_treatment.content')
-      router-link.custom-home-why__button(to='/treatments') See All Treatments 
+      .custom-home-why__button-container
+        router-link.custom-home-why__button(to='/treatments') See All Treatments 
         
