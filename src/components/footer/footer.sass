@@ -41,14 +41,19 @@
     top: -36px
     left: calc(50% - 110px)
 
+    @media(max-width: $screen-sm)
+      width: 220px
+
+
   &__col-right
     top: -15px
     right: 0
     text-align: right
 
     @media(max-width: $screen-sm)
+      top: 60px
       justify-content: center
-      margin-top: 32px
+      margin-bottom: 32px
 
   &__contact-box
     display: inline-block
