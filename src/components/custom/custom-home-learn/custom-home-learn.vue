@@ -24,6 +24,10 @@ export default {
       } else {
         return text
       }
+    },
+    visitBlog (slug) {
+      this.$router.push(slug)
+      setTimeout(() => { this.$scrollTo('.pages-blog__background', { offset: -132 }) }, 500)
     }
   },
   created () {

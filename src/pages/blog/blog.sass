@@ -19,7 +19,8 @@
       margin: 0
       padding: 0 30px
 
-  &__top-back-treatment
+  &__top-back-treatment,
+  &__top-back-faq
     display: flex
     position: absolute
     top: 40px
@@ -87,16 +88,25 @@
     @media(max-width: $screen-sm)
       height: 240px
 
+    &:hover
+      cursor: pointer
+
   &__service-title
     margin-bottom: 24px
     color: $marigold
     font-size: 18px
     font-weight: 600
 
+    &:hover
+      cursor: pointer
+
   &__service-see-more
     display: block
     margin-top: 24px
     text-align: right
+
+    &:hover
+      cursor: pointer
 
   &__service-container
     position: relative
@@ -167,6 +177,9 @@
     margin-bottom: 4px
     color: $marigold
     font-size: 18px
+
+    &:hover
+      cursor: pointer
 
   &__service-text
     display: inline-block

@@ -1,10 +1,14 @@
 .pages-blog(v-if='blog')
   .pages-blog__hero(:style='"backgroundImage: url(" + blog.acf.blog_posts.hero + ");"')
   .pages-blog__background
-    router-link.pages-blog__top-back-treatment(to='/treatments')
+    router-link.pages-blog__top-back-treatment(to='/treatments', v-if='blog.categories[0] !== 12')
       .pages-blog__icon-back
         Icon(name='LeftCarot')
       .pages-blog__back-text Back to Treatments
+    router-link.pages-blog__top-back-faq(to='/faq', v-if='blog.categories[0] === 12')
+      .pages-blog__icon-back
+        Icon(name='LeftCarot')
+      .pages-blog__back-text Back to FAQ
     .pages-blog__container
       .pages-blog__title(v-html='blog.acf.blog_posts.title')
       .pages-blog__content(v-html='blog.acf.blog_posts.content')
@@ -12,11 +16,11 @@
     .pages-blog__service-container
       swiper.pages-blog__services(:options='swiperOption')
         swiperSlide.pages-blog__service(v-for='(blog, j) in allBlogs', :key='j', v-if='blog.categories.includes(activeCategories)')
-          router-link.pages-blog__service-image-container(:to='blog.slug')
+          .pages-blog__service-image-container(@click='visitBlog(blog.slug)')
             .pages-blog__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
-          router-link.pages-blog__service-title(v-html='blog.acf.blog_posts.title', :to='blog.slug')
+          .pages-blog__service-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
           .pages-blog__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
-          router-link.pages-blog__service-see-more(:to='blog.slug') See More...
+          .pages-blog__service-see-more(@click='visitBlog(blog.slug)') See More...
       .pages-blog__container-pagination
         .pages-blog__pagination(slot='pagination')
       .pages-blog__prev-btn
@@ -24,5 +28,5 @@
       .pages-blog__next-btn
         Icon(name='RightCarot')
     .pages-blog__service-index
-      router-link.pages-blog__service-link(v-for='(blog, k) in allBlogs', :key='k', v-if='blog.categories.includes(activeCategories)', :to='blog.slug')
+      .pages-blog__service-link(v-for='(blog, k) in allBlogs', :key='k', v-if='blog.categories.includes(activeCategories)', @click='visitBlog(blog.slug)')
         .pages-blog__service-text {{ blog.acf.blog_posts.title }} +  

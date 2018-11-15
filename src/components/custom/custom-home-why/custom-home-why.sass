@@ -64,11 +64,22 @@
     @media(max-width: $screen-sm)
       display: block
 
+    &--title-line
+      position: absolute
+      top: 225px
+      left: 270px
+      transition: all 0.6s ease-in-out
+      z-index: 2
+      background: $black
+      width: 182px
+      height: 2px
+
     &--title
       position: absolute
       top: 75px
       right: 210px
       transition: all 0.4s ease-in-out
+      z-index: 2
       color: $tussok
       font-size: 64px
       font-style: italic
@@ -99,9 +110,16 @@
       @media(max-width: $screen-sm)
         width: 100%
 
+    &--image-overlay
+      transition: all 0.6s ease-in-out
+      opacity: 0
+      background: linear-gradient(to top, #000000, rgba(42, 42, 42, 0))
+      width: 100%
+      height: 100%
+
     &--content
       position: absolute
-      top: 70px
+      top: 16px
       left: 0
       transition: all 0.4s ease-in-out
       opacity: 0
@@ -111,7 +129,6 @@
         display: none
 
     &:hover
-      cursor: pointer
 
       .custom-home-why__left-top--title
         transform: translateX(290px)
@@ -123,6 +140,12 @@
         transform: translateY(-10px)
         opacity: 1
 
+      .custom-home-why__left-top--image-overlay
+        opacity: 0.8
+
+      .custom-home-why__left-top--title-line
+        background: $marigold
+
     &--mobile-content
       display: none
 
@@ -131,6 +154,16 @@
 
   &__left-bottom
     position: relative
+
+    &--title-line
+      position: absolute
+      top: 150px
+      left: 30px
+      transition: all 0.6s ease-in-out
+      z-index: 2
+      background: $black
+      width: 2px
+      height: 247px
 
     &--title
       transition: all 0.4s ease-in-out
@@ -158,11 +191,19 @@
       @media(max-width: $screen-sm)
         height: 260px
 
+    &--image-overlay
+      transition: all 0.6s ease-in-out
+      opacity: 0
+      background: linear-gradient(to top, #000000, rgba(42, 42, 42, 0))
+      width: 100%
+      height: 100%
+
     &--content
       position: absolute
       top: 350px
       transition: all 0.4s ease-in-out
       opacity: 0
+      margin-left: 64px
 
       @media(max-width: $screen-sm)
         position: relative
@@ -170,7 +211,6 @@
         opacity: 1
 
     &:hover
-      cursor: pointer
 
       .custom-home-why__left-bottom--title
         transform: translateY(-160px)
@@ -185,6 +225,11 @@
         @media(max-width: $screen-sm)
           transform: none
 
+      .custom-home-why__left-bottom--image-overlay
+        opacity: 0.8
+
+      .custom-home-why__left-bottom--title-line
+        background: $marigold
 
   &__col-right
     position: relative
@@ -194,6 +239,7 @@
 
     &--title
       transition: all 0.4s ease-in-out
+      margin-right: 60px
       text-align: center
       color: $tussok
       font-size: 64px
@@ -210,6 +256,16 @@
         margin: 16px 0
         font-size: 32px
 
+    &--title-line
+      position: absolute
+      top: 400px
+      left: 60px
+      transition: all 0.6s ease-in-out
+      z-index: 2
+      background: $black
+      width: 2px
+      height: 247px
+
     &--image
       @extend .img-norm
       margin-top: 100px
@@ -221,11 +277,19 @@
         width: 100%
         height: 260px
 
+    &--image-overlay
+      transition: all 0.6s ease-in-out
+      opacity: 0
+      background: linear-gradient(to top, #000000, rgba(42, 42, 42, 0))
+      width: 100%
+      height: 100%
+
     &--content
       position: absolute
       top: 588px
       transition: all 0.4s ease-in-out
       opacity: 0
+      margin-left: 90px
 
       @media(max-width: $screen-sm)
         position: relative
@@ -233,7 +297,6 @@
         opacity: 1
 
     &:hover
-      cursor: pointer
 
       .custom-home-why__col-right--title
         transform: translateY(-160px)
@@ -241,6 +304,12 @@
       .custom-home-why__col-right--content
         transform: translateY(-10px)
         opacity: 1
+
+      .custom-home-why__col-right--image-overlay
+        opacity: 0.8
+
+      .custom-home-why__col-right--title-line
+        background: $marigold
 
   &__button-container
     width: 100%

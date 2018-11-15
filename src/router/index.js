@@ -121,7 +121,8 @@ const router = new VueRouter({
           slug: 'kids',
           meta: {
             parent: 'Treatments',
-            subnav: true
+            subnav: true,
+            navigation: true
           }
         },
         {
@@ -130,7 +131,8 @@ const router = new VueRouter({
           slug: 'airway-oriented-orthodontics',
           meta: {
             parent: 'Treatments',
-            subnav: true
+            subnav: true,
+            navigation: true
           }
         }
       ]

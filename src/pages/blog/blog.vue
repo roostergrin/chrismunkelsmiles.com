@@ -63,12 +63,15 @@ export default {
       } else {
         return text
       }
+    },
+    visitBlog (slug) {
+      this.$router.push(slug)
+      setTimeout(() => { this.$scrollTo('.pages-blog__background', { offset: -132 }) }, 500)
     }
   },
   created () {
     let fillBlogs = setInterval(() => {
       if (this.blogs.length > 1) {
-        console.log(this.blogs[0])
         this.activeCategories = this.blog.categories[0]
         this.activeTags = this.blog.tags[0]
         this.loading = true

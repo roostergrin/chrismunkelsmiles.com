@@ -29,7 +29,6 @@ export default {
   created () {
     let fillBlogs = setInterval(() => {
       if (this.blogs.length > 1) {
-        console.log(this.blogs)
         this.loading = true
         this.allBlogs = this.blogs
         clearInterval(fillBlogs)

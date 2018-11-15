@@ -6,27 +6,27 @@
         .tab-treatments-airway__content(v-html='props.content')
         .tab-treatments-airway__blog-container
           .tab-treatments-airway__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(11)')
-            router-link.tab-treatments-airway__col-blog-image(:to='blog.slug')
+            .tab-treatments-airway__col-blog-image(@click='visitBlog(blog.slug)')
               .tab-treatments-airway__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
             .tab-treatments-airway__col-blog-text
-              router-link.tab-treatments-airway__blog-title(v-html='blog.acf.blog_posts.title', :to='blog.slug')
+              .tab-treatments-airway__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
               .tab-treatments-airway__blog-summary(v-html='truncatePost(blog.acf.blog_posts.content)')
-              router-link.tab-treatments-airway__blog-see-more(:to='blog.slug') See More...
+              .tab-treatments-airway__blog-see-more(@click='visitBlog(blog.slug)') See More...
         //- .tab-treatments-airway__services-title More Services
         //- .tab-treatments-airway__service-container
         //-   swiper.tab-treatments-airway__services(:options='swiperOption')
         //-     swiperSlide.tab-treatments-airway__service(v-for='(blog, j) in allBlogs', :key='j', v-if='blog.categories.includes(6) && !blog.tags.includes(11)')
-        //-       router-link.tab-treatments-airway__service-image-container(:to='blog.slug')
+        //-       .tab-treatments-airway__service-image-container(@click='visitBlog(blog.slug)')
         //-         .tab-treatments-airway__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
-        //-       router-link.tab-treatments-airway__service-title(v-html='blog.acf.blog_posts.title', :to='blog.slug')
+        //-       .tab-treatments-airway__service-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
         //-       .tab-treatments-airway__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
-        //-       router-link.tab-treatments-airway__service-see-more(:to='blog.slug') See More...
+        //-       .tab-treatments-airway__service-see-more(@click='visitBlog(blog.slug)') See More...
         //-   .tab-treatments-airway__prev-btn
         //-     Icon(name='LeftCarot')
         //-   .tab-treatments-airway__next-btn
         //-     Icon(name='RightCarot')
         //- .tab-treatments-airway__service-index
-        //-   router-link.tab-treatments-airway__service-link(v-for='(blog, k) in allBlogs', :key='k', v-if='blog.categories.includes(6)', :to='blog.slug')
+        //-   .tab-treatments-airway__service-link(v-for='(blog, k) in allBlogs', :key='k', v-if='blog.categories.includes(6)', @click='visitBlog(blog.slug)')
         //-     .tab-treatments-airway__service-text(v-html='blog.acf.blog_posts.title')
         //-     span  +
         

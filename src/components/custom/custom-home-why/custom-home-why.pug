@@ -6,17 +6,23 @@
       .custom-home-why__row
         .custom-home-why__col-left
           .custom-home-why__left-top
+            .custom-home-why__left-top--title-line
             .custom-home-why__left-top--title(v-html='props.top_left_treatment.title')
             .custom-home-why__left-top--content(v-html='props.top_left_treatment.content')
             .custom-home-why__left-top--image(:style='"backgroundImage: url(" + props.top_left_treatment.image + ");"', ref='topImage')
+              .custom-home-why__left-top--image-overlay
             .custom-home-why__left-top--mobile-title High Standards
             .custom-home-why__left-top--mobile-content(v-html='props.top_left_treatment.content')
           .custom-home-why__left-bottom
+            .custom-home-why__left-bottom--title-line
             .custom-home-why__left-bottom--image(:style='"backgroundImage: url(" + props.bottom_left_treatment.image + ");"')
+              .custom-home-why__left-bottom--image-overlay
             .custom-home-why__left-bottom--title(v-html='props.bottom_left_treatment.title')
             .custom-home-why__left-bottom--content(v-html='props.bottom_left_treatment.content')
         .custom-home-why__col-right
+          .custom-home-why__col-right--title-line
           .custom-home-why__col-right--image(:style='"backgroundImage: url(" + props.right_treatment.image + ");"')
+            .custom-home-why__col-right--image-overlay
           .custom-home-why__col-right--title(v-html='props.right_treatment.title')
           .custom-home-why__col-right--content(v-html='props.right_treatment.content')
       .custom-home-why__button-container

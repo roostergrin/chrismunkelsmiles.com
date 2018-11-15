@@ -6,27 +6,27 @@
         .tab-treatments-kids__content(v-html='props.content')
         .tab-treatments-kids__blog-container
           .tab-treatments-kids__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(9)')
-            router-link.tab-treatments-kids__col-blog-image(:to='blog.slug')
+            .tab-treatments-kids__col-blog-image(@click='visitBlog(blog.slug)')
               .tab-treatments-kids__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
             .tab-treatments-kids__col-blog-text
-              router-link.tab-treatments-kids__blog-title(v-html='blog.acf.blog_posts.title', :to='blog.slug')
+              .tab-treatments-kids__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
               .tab-treatments-kids__blog-summary(v-html='truncatePost(blog.acf.blog_posts.content)')
-              router-link.tab-treatments-kids__blog-see-more(:to='blog.slug') See More...
+              .tab-treatments-kids__blog-see-more(@click='visitBlog(blog.slug)') See More...
         //- .tab-treatments-kids__services-title More Services
         //- .tab-treatments-kids__service-container
         //-   swiper.tab-treatments-kids__services(:options='swiperOption')
         //-     swiperSlide.tab-treatments-kids__service(v-for='(blog, j) in allBlogs', :key='j', v-if='blog.categories.includes(5) && !blog.tags.includes(9)')
-        //-       router-link.tab-treatments-kids__service-image-container(:to='blog.slug')
+        //-       .tab-treatments-kids__service-image-container(@click='visitBlog(blog.slug)')
         //-         .tab-treatments-kids__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
-        //-       router-link.tab-treatments-kids__service-title(v-html='blog.acf.blog_posts.title', :to='blog.slug')
+        //-       .tab-treatments-kids__service-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
         //-       .tab-treatments-kids__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
-        //-       router-link.tab-treatments-kids__service-see-more(:to='blog.slug') See More...
+        //-       .tab-treatments-kids__service-see-more(@click='visitBlog(blog.slug)') See More...
         //-   .tab-treatments-kids__prev-btn
         //-     Icon(name='LeftCarot')
         //-   .tab-treatments-kids__next-btn
         //-     Icon(name='RightCarot')
         //- .tab-treatments-kids__service-index
-        //-   router-link.tab-treatments-kids__service-link(v-for='(blog, k) in allBlogs', :key='k', v-if='blog.categories.includes(5)', :to='blog.slug')
+        //-   .tab-treatments-kids__service-link(v-for='(blog, k) in allBlogs', :key='k', v-if='blog.categories.includes(5)', @click='visitBlog(blog.slug)')
         //-     .tab-treatments-kids__service-text(v-html='blog.acf.blog_posts.title')
         //-     span  +
         
