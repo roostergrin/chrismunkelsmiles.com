@@ -3,7 +3,7 @@
     .tab-treatments-restorations__container
       .tab-treatments-restorations__content-box
         .tab-treatments-restorations__title(v-html='props.title')
-        .tab-treatments-restorations__content(v-html='props.content')
+        //- .tab-treatments-restorations__content(v-html='props.content')
         .tab-treatments-restorations__blog-container
           .tab-treatments-restorations__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(10)')
             .tab-treatments-restorations__col-blog-image(@click='visitBlog(blog.slug)')

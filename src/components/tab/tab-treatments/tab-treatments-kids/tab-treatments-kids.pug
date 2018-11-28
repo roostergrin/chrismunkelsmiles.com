@@ -3,7 +3,7 @@
     .tab-treatments-kids__container
       .tab-treatments-kids__content-box
         .tab-treatments-kids__title(v-html='props.title')
-        .tab-treatments-kids__content(v-html='props.content')
+        //- .tab-treatments-kids__content(v-html='props.content')
         .tab-treatments-kids__blog-container
           .tab-treatments-kids__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(9)')
             .tab-treatments-kids__col-blog-image(@click='visitBlog(blog.slug)')

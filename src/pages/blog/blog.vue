@@ -72,6 +72,7 @@ export default {
   created () {
     let fillBlogs = setInterval(() => {
       if (this.blogs.length > 1) {
+        console.log(this.$store.state.filter)
         this.activeCategories = this.blog.categories[0]
         this.activeTags = this.blog.tags[0]
         this.loading = true

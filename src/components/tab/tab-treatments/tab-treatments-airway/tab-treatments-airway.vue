@@ -42,8 +42,8 @@ export default {
     truncatePost (i) {
       let text = i
       let truncText = []
-      if (text.length >= 480) {
-        truncText = text.slice(0, 480)
+      if (text.length >= 350) {
+        truncText = text.slice(0, 350)
         return truncText + '...'
       } else {
         return text

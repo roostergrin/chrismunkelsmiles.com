@@ -1,9 +1,9 @@
-.tab-treatments-cleaning(v-if='loading')
+.tab-treatments-cleaning(v-if='loading && props')
   .tab-treatments-cleaning__background
     .tab-treatments-cleaning__container
       .tab-treatments-cleaning__content-box
         .tab-treatments-cleaning__title(v-html='props.title')
-        .tab-treatments-cleaning__content(v-html='props.content')
+        //- .tab-treatments-cleaning__content(v-html='props.content')
         .tab-treatments-cleaning__blog-container
           .tab-treatments-cleaning__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(7)')
             .tab-treatments-cleaning__col-blog-image(@click='visitBlog(blog.slug)')
@@ -16,11 +16,12 @@
         .tab-treatments-cleaning__service-container
           swiper.tab-treatments-cleaning__services(:options='swiperOption')
             swiperSlide.tab-treatments-cleaning__service(v-for='(blog, j) in allBlogs', :key='j', v-if='blog.categories.includes(2) && !blog.tags.includes(7)')
-              .tab-treatments-cleaning__service-image-container(@click='visitBlog(blog.slug)')
-                .tab-treatments-cleaning__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
-              .tab-treatments-cleaning__service-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
-              .tab-treatments-cleaning__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
-              .tab-treatments-cleaning__service-see-more(@click='visitBlog(blog.slug)') See More...
+              .tab-treatments-cleaning__service-tile(@click='visitBlog(blog.slug)')
+                .tab-treatments-cleaning__service-image-container
+                  .tab-treatments-cleaning__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+                .tab-treatments-cleaning__service-title(v-html='blog.acf.blog_posts.title')
+                .tab-treatments-cleaning__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
+                .tab-treatments-cleaning__service-see-more See More...
           .tab-treatments-cleaning__container-pagination
             .tab-treatments-cleaning__pagination(slot='pagination')
           .tab-treatments-cleaning__prev-btn
