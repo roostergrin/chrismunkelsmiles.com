@@ -21,11 +21,11 @@
           .pages-blog__service-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
           .pages-blog__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
           .pages-blog__service-see-more(@click='visitBlog(blog.slug)') See More...
-      .pages-blog__container-pagination
+      .pages-blog__container-pagination(v-if='numOfServices > 3')
         .pages-blog__pagination(slot='pagination')
-      .pages-blog__prev-btn
+      .pages-blog__prev-btn(v-if='numOfServices > 3')
         Icon(name='LeftCarot')
-      .pages-blog__next-btn
+      .pages-blog__next-btn(v-if='numOfServices > 3')
         Icon(name='RightCarot')
     .pages-blog__service-index
       .pages-blog__service-link(v-for='(blog, k) in allBlogs', :key='k', v-if='blog.categories.includes(activeCategories)', @click='visitBlog(blog.slug)')

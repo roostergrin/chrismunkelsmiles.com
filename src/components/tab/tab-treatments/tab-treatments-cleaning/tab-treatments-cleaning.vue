@@ -33,7 +33,8 @@ export default {
         }
       },
       loading: false,
-      allBlogs: []
+      allBlogs: [],
+      numOfServices: false
     }
   },
   computed: {
@@ -72,11 +73,14 @@ export default {
     swiperSlide,
     Icon
   },
-  mounted () {
+  created () {
     let fillBlogs = setInterval(() => {
       if (this.blogs.length > 1) {
+        let selectedBlogs = this.blogs.filter(blog => blog.categories.includes(2))
+        let selectedServices = selectedBlogs.filter(blog => !blog.tags.includes(7))
         this.loading = true
-        this.allBlogs = this.blogs
+        this.allBlogs = selectedBlogs
+        this.numOfServices = selectedServices.length
         clearInterval(fillBlogs)
       }
     }, 100)

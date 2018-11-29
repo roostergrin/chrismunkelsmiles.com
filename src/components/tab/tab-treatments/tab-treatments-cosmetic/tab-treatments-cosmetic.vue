@@ -33,7 +33,8 @@ export default {
         }
       },
       loading: false,
-      allBlogs: []
+      allBlogs: [],
+      numOfServices: false
     }
   },
   computed: {
@@ -75,8 +76,12 @@ export default {
   created () {
     let fillBlogs = setInterval(() => {
       if (this.blogs.length > 1) {
+        let selectedBlogs = this.blogs.filter(blog => blog.categories.includes(3))
+        let selectedServices = selectedBlogs.filter(blog => !blog.tags.includes(8))
         this.loading = true
-        this.allBlogs = this.blogs
+        this.allBlogs = selectedBlogs
+        this.numOfServices = selectedServices.length
+        console.log(this.numOfServices)
         clearInterval(fillBlogs)
       }
     }, 100)

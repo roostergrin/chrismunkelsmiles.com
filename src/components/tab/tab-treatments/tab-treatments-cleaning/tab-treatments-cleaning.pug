@@ -15,20 +15,20 @@
         .tab-treatments-cleaning__services-title More Services
         .tab-treatments-cleaning__service-container
           swiper.tab-treatments-cleaning__services(:options='swiperOption')
-            swiperSlide.tab-treatments-cleaning__service(v-for='(blog, j) in allBlogs', :key='j', v-if='blog.categories.includes(2) && !blog.tags.includes(7)')
+            swiperSlide.tab-treatments-cleaning__service(v-for='(blog, j) in allBlogs', :key='j', v-if='!blog.tags.includes(7)')
               .tab-treatments-cleaning__service-tile(@click='visitBlog(blog.slug)')
                 .tab-treatments-cleaning__service-image-container
                   .tab-treatments-cleaning__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
                 .tab-treatments-cleaning__service-title(v-html='blog.acf.blog_posts.title')
                 .tab-treatments-cleaning__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
                 .tab-treatments-cleaning__service-see-more See More...
-          .tab-treatments-cleaning__container-pagination
+          .tab-treatments-cleaning__container-pagination(v-if='numOfServices > 3')
             .tab-treatments-cleaning__pagination(slot='pagination')
-          .tab-treatments-cleaning__prev-btn
+          .tab-treatments-cleaning__prev-btn(v-if='numOfServices > 3')
             Icon(name='LeftCarot')
-          .tab-treatments-cleaning__next-btn
+          .tab-treatments-cleaning__next-btn(v-if='numOfServices > 3')
             Icon(name='RightCarot')
         .tab-treatments-cleaning__service-index
-          .tab-treatments-cleaning__service-link(v-for='(blog, k) in allBlogs', :key='k', v-if='blog.categories.includes(2)', @click='visitBlog(blog.slug)')
+          .tab-treatments-cleaning__service-link(v-for='(blog, k) in allBlogs', :key='k', @click='visitBlog(blog.slug)')
             .tab-treatments-cleaning__service-text {{ blog.acf.blog_posts.title }} +
         

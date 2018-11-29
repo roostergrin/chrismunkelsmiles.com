@@ -10,7 +10,6 @@ export default {
     return {
       swiperOption: {
         slidesPerView: 3,
-        loop: true,
         autoplay: {
           delay: 5000
         },
@@ -36,7 +35,8 @@ export default {
       allBlogs: [],
       loading: false,
       activeCategories: [],
-      activeTags: []
+      activeTags: [],
+      numOfServices: false
     }
   },
   computed: {
@@ -72,11 +72,13 @@ export default {
   created () {
     let fillBlogs = setInterval(() => {
       if (this.blogs.length > 1) {
-        console.log(this.$store.state.filter)
         this.activeCategories = this.blog.categories[0]
         this.activeTags = this.blog.tags[0]
         this.loading = true
-        this.allBlogs = this.blogs
+        let selectedBlogs = this.blogs.filter(blog => blog.categories.includes(this.activeCategories))
+        let selectedServices = selectedBlogs.filter(blog => !blog.tags.includes(this.activeTags))
+        this.numOfServices = selectedServices.length
+        this.allBlogs = selectedBlogs
         clearInterval(fillBlogs)
       }
     }, 100)
