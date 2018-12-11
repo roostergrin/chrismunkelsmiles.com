@@ -116,6 +116,16 @@ const router = new VueRouter({
           }
         },
         {
+          path: '/treatments#tmj-jva',
+          name: 'TMJ/JVA',
+          slug: 'tmj-jva',
+          meta: {
+            parent: 'Treatments',
+            subnav: true,
+            navigation: true
+          }
+        },
+        {
           path: '/treatments#kids',
           name: 'Kids',
           slug: 'kids',

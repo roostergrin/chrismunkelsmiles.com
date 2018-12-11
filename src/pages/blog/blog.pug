@@ -14,6 +14,7 @@
       .pages-blog__content(v-html='blog.acf.blog_posts.content')
       router-link.pages-blog__bottom-back-treatment(to='/treatments') < Back to Treatments
     .pages-blog__service-container
+      .pages-blog__services-main-title More Services
       swiper.pages-blog__services(:options='swiperOption')
         swiperSlide.pages-blog__service(v-for='(blog, j) in allBlogs', :key='j', v-if='blog.categories.includes(activeCategories)')
           .pages-blog__service-image-container(@click='visitBlog(blog.slug)')

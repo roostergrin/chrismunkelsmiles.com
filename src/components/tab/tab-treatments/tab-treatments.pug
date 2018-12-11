@@ -5,6 +5,8 @@
     TabTreatmentsCosmetic(:props='props.tab_treatments_cosmetic')
   transition(name='fade-in-nav', v-if='$route.hash === "#restorations"')
     TabTreatmentsRestorations(:props='props.tab_treatments_restorations')
+  transition(name='fade-in-nav', v-if='$route.hash === "#tmj-jva"')
+    TabTreatmentsTMJ(:props='props.tab_treatments_tmj')
   transition(name='fade-in-nav', v-if='$route.hash === "#kids"')
     TabTreatmentsKids(:props='props.tab_treatments_kids')
   transition(name='fade-in-nav', v-if='$route.hash === "#airway-oriented-orthodontics"')

@@ -1,0 +1,34 @@
+.tab-treatments-tmj(v-if='loading && props')
+  .tab-treatments-tmj__background
+    .tab-treatments-tmj__container
+      .tab-treatments-tmj__content-box
+        .tab-treatments-tmj__title(v-html='props.title')
+        //- .tab-treatments-tmj__content(v-html='props.content')
+        .tab-treatments-tmj__blog-container
+          .tab-treatments-tmj__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(15)')
+            .tab-treatments-tmj__col-blog-image(@click='visitBlog(blog.slug)')
+              .tab-treatments-tmj__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+            .tab-treatments-tmj__col-blog-text
+              .tab-treatments-tmj__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
+              .tab-treatments-tmj__blog-summary(v-html='truncatePost(blog.acf.blog_posts.content)')
+              .tab-treatments-tmj__blog-see-more(@click='visitBlog(blog.slug)') See More...
+        //- .tab-treatments-tmj__services-title More Services
+        //- .tab-treatments-tmj__service-container
+        //-   swiper.tab-treatments-tmj__services(:options='swiperOption')
+        //-     swiperSlide.tab-treatments-tmj__service(v-for='(blog, j) in allBlogs', :key='j', v-if='!blog.tags.includes(15)')
+        //-       .tab-treatments-tmj__service-tile(@click='visitBlog(blog.slug)')
+        //-         .tab-treatments-tmj__service-image-container
+        //-           .tab-treatments-tmj__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+        //-         .tab-treatments-tmj__service-title(v-html='blog.acf.blog_posts.title')
+        //-         .tab-treatments-tmj__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
+        //-         .tab-treatments-tmj__service-see-more See More...
+        //-   .tab-treatments-tmj__container-pagination(v-if='numOfServices > 3')
+        //-     .tab-treatments-tmj__pagination(slot='pagination')
+        //-   .tab-treatments-tmj__prev-btn(v-if='numOfServices > 3')
+        //-     Icon(name='LeftCarot')
+        //-   .tab-treatments-tmj__next-btn(v-if='numOfServices > 3')
+        //-     Icon(name='RightCarot')
+        //- .tab-treatments-tmj__service-index
+        //-   .tab-treatments-tmj__service-link(v-for='(blog, k) in allBlogs', :key='k', @click='visitBlog(blog.slug)')
+        //-     .tab-treatments-tmj__service-text {{ blog.acf.blog_posts.title }} +
+        
