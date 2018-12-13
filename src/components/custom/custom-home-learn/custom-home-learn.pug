@@ -2,7 +2,7 @@
   .custom-home-learn__background
     .custom-home-learn__container
       .custom-home-learn__title(v-html='props.title')
-      .custom-home-learn__content(v-html='props.content')
+      //- .custom-home-learn__content(v-html='props.content')
       .custom-home-learn__columns
         .custom-home-learn__column(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(13)')
           .custom-home-learn__image-box(@click='visitBlog(blog.slug)')
