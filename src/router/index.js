@@ -125,16 +125,16 @@ const router = new VueRouter({
             navigation: true
           }
         },
-        {
-          path: '/treatments#kids',
-          name: 'Kids',
-          slug: 'kids',
-          meta: {
-            parent: 'Treatments',
-            subnav: true,
-            navigation: true
-          }
-        },
+        // {
+        //   path: '/treatments#kids',
+        //   name: 'Kids',
+        //   slug: 'kids',
+        //   meta: {
+        //     parent: 'Treatments',
+        //     subnav: true,
+        //     navigation: true
+        //   }
+        // },
         {
           path: '/treatments#airway-oriented-orthodontics',
           name: 'Airway-Oriented Orthodontics',
