@@ -13,7 +13,11 @@
         a.nav-desktop__icon-box(:href='props.acf.nav.form_link')
           .nav-desktop__form-icon
             Icon(name='NavForm')
-          .nav-desktop__form-text Download Patient Forms
+          .nav-desktop__form-text Health History Form
+        a.nav-desktop__icon-box(:href='props.acf.nav.form_link_two')
+          .nav-desktop__form-icon
+            Icon(name='NavForm')
+          .nav-desktop__form-text Sleep Evaluation Form
   transition(name='fade-in-nav')
     .nav-desktop__bottom-background(v-if='!$store.state.nav || activeMenu || activeModal')
       .nav-desktop__background-line
@@ -34,6 +38,8 @@
           a.nav-desktop__phone(:href='props.acf.nav.phone_link')
             Icon(name='Phone')
           a.nav-desktop__form(:href='props.acf.nav.form_link', target='_blank')
+            Icon(name='NavForm')
+          a.nav-desktop__form(:href='props.acf.nav.form_link_two', target='_blank')
             Icon(name='NavForm')
           .nav-desktop__calendar(@click='toggleModalContact')
             Icon(name='Calendar')

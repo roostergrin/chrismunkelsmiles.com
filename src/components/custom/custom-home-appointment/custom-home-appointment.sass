@@ -39,6 +39,9 @@
       width: 182px
       height: 2px
 
+      @media(max-width: $screen-sm)
+        display: none
+
     &--title
       position: absolute
       top: 240px
@@ -126,6 +129,9 @@
       width: 2px
       height: 200px
 
+      @media(max-width: $screen-sm)
+        display: none
+
     &--image
       @extend .img-norm
       margin-top: 80px
@@ -170,6 +176,7 @@
         position: relative
         top: 0
         opacity: 1
+        margin-left: 0
 
 
     &:hover
