@@ -55,16 +55,16 @@ const router = new VueRouter({
         //     navigation: true
         //   }
         // },
-        {
-          path: '/about-us#tech',
-          name: 'Technology',
-          slug: 'technology',
-          meta: {
-            parent: 'About Us',
-            subnav: true,
-            navigation: true
-          }
-        },
+        // {
+        //   path: '/about-us#tech',
+        //   name: 'Technology',
+        //   slug: 'technology',
+        //   meta: {
+        //     parent: 'About Us',
+        //     subnav: true,
+        //     navigation: true
+        //   }
+        // },
         {
           path: '/about-us#office',
           name: 'Office Tour',
@@ -139,6 +139,16 @@ const router = new VueRouter({
           path: '/treatments#airway-oriented-orthodontics',
           name: 'Airway-Oriented Orthodontics',
           slug: 'airway-oriented-orthodontics',
+          meta: {
+            parent: 'Treatments',
+            subnav: true,
+            navigation: true
+          }
+        },
+        {
+          path: '/treatments#tech',
+          name: 'Technology',
+          slug: 'tech',
           meta: {
             parent: 'Treatments',
             subnav: true,
