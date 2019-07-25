@@ -154,6 +154,16 @@ const router = new VueRouter({
             subnav: true,
             navigation: true
           }
+        },
+        {
+          path: '/treatments#sleep-apnea',
+          name: 'Sleep Apnea',
+          slug: 'sleep-apnea',
+          meta: {
+            parent: 'Treatments',
+            subnav: true,
+            navigation: true
+          }
         }
       ]
     },

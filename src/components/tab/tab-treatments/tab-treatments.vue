@@ -8,6 +8,7 @@ import TabTreatmentsTMJ from 'components/tab/tab-treatments/tab-treatments-tmj/t
 import TabTreatmentsKids from 'components/tab/tab-treatments/tab-treatments-kids/tab-treatments-kids'
 import TabTreatmentsAirway from 'components/tab/tab-treatments/tab-treatments-airway/tab-treatments-airway'
 import TabAboutTech from 'components/tab/tab-about/tab-about-tech/tab-about-tech'
+import TabTreatmentsSleepApnea from 'components/tab/tab-treatments/tab-treatments-sleep-apnea/tab-treatments-sleep-apnea'
 
 export default {
   props: ['props'],
@@ -18,7 +19,8 @@ export default {
     TabTreatmentsTMJ,
     TabTreatmentsKids,
     TabTreatmentsAirway,
-    TabAboutTech
+    TabAboutTech,
+    TabTreatmentsSleepApnea
   }
 }
 </script>

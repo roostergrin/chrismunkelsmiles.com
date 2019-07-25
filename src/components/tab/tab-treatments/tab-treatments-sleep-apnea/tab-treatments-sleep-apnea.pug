@@ -1,0 +1,34 @@
+.tab-treatments-sleep-apnea(v-if='loading')
+  .tab-treatments-sleep-apnea__background
+    .tab-treatments-sleep-apnea__container
+      .tab-treatments-sleep-apnea__content-box
+        .tab-treatments-sleep-apnea__title(v-html='props.title')
+        //- .tab-treatments-sleep-apnea__content(v-html='props.content')
+        .tab-treatments-sleep-apnea__blog-container
+          .tab-treatments-sleep-apnea__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(17)')
+            .tab-treatments-sleep-apnea__col-blog-image(@click='visitBlog(blog.slug)')
+              .tab-treatments-sleep-apnea__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+            .tab-treatments-sleep-apnea__col-blog-text
+              .tab-treatments-sleep-apnea__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
+              .tab-treatments-sleep-apnea__blog-summary(v-html='truncatePost(blog.acf.blog_posts.content)')
+              .tab-treatments-sleep-apnea__blog-see-more(@click='visitBlog(blog.slug)') See More...
+              | {{ blog.slug }}
+        .tab-treatments-sleep-apnea__services-title More Services
+        .tab-treatments-sleep-apnea__service-container
+          swiper.tab-treatments-sleep-apnea__services(:options='swiperOption')
+            swiperSlide.tab-treatments-sleep-apnea__service(v-for='(blog, j) in allBlogs', :key='j', v-if='!blog.tags.includes(17)')
+              .tab-treatments-sleep-apnea__service-image-container(@click='visitBlog(blog.slug)')
+                .tab-treatments-sleep-apnea__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+              .tab-treatments-sleep-apnea__service-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
+              .tab-treatments-sleep-apnea__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
+              .tab-treatments-sleep-apnea__service-see-more(@click='visitBlog(blog.slug)') See More...
+          .tab-treatments-sleep-apnea__container-pagination(v-if='numOfServices > 3')
+            .tab-treatments-sleep-apnea__pagination(slot='pagination')
+          .tab-treatments-sleep-apnea__prev-btn(v-if='numOfServices > 3')
+            Icon(name='LeftCarot')
+          .tab-treatments-sleep-apnea__next-btn(v-if='numOfServices > 3')
+            Icon(name='RightCarot')
+        .tab-treatments-sleep-apnea__service-index
+          .tab-treatments-sleep-apnea__service-link(v-for='(blog, k) in allBlogs', :key='k', v-if='blog.categories.includes(16)', @click='visitBlog(blog.slug)')
+            .tab-treatments-sleep-apnea__service-text {{ blog.acf.blog_posts.title }} +
+        
