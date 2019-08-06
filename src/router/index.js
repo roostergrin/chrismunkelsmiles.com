@@ -44,7 +44,7 @@ const router = new VueRouter({
             subnav: true,
             navigation: true
           }
-        },
+        }
         // {
         //   path: '/about-us#team',
         //   name: 'Our Team',
@@ -65,16 +65,16 @@ const router = new VueRouter({
         //     navigation: true
         //   }
         // },
-        {
-          path: '/about-us#office',
-          name: 'Office Tour',
-          slug: 'office-tour',
-          meta: {
-            parent: 'About Us',
-            subnav: true,
-            navigation: true
-          }
-        }
+        // {
+        //   path: '/about-us#office',
+        //   name: 'Office Tour',
+        //   slug: 'office-tour',
+        //   meta: {
+        //     parent: 'About Us',
+        //     subnav: true,
+        //     navigation: true
+        //   }
+        // }
       ]
     },
     {
