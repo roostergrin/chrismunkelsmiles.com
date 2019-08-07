@@ -65,6 +65,7 @@
               .nav-desktop__active-book-appointment(@click='toggleModalContact') Book an Appointment
               .nav-desktop__active-address(v-html='props.acf.nav.address')
               .nav-desktop__active-phone(v-html='props.acf.nav.phone')
+              .nav-desktop__how-may-we-help-you How may we help you?
       .nav-desktop__active-footer-line
         .nav-desktop__active-social-media-container
           .nav-desktop__active-social-media
@@ -78,4 +79,4 @@
               Icon(name='FooterCalendar')
   transition(name='fade-in-nav')
     ModalContact(v-if='activeModal', @hideModalContact='toggleModalContact')
-              
+

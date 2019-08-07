@@ -13,7 +13,7 @@ function request_contact_route () {
   global $wpdb;
   $data = json_decode(file_get_contents("php://input"), true);
   $from = 'info@wordpress.com';
-  $to = 'info@chrismunkelsmiles.com';
+  $to = ['info@chrismunkelsmiles.com', 'assistant@chrismunkelsmiles.com'];
   $subject = 'Appointment Request Form';
   $headers = array('Content-Type: text/html; charset=UTF-8');
   $message = '<html><body>';
