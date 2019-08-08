@@ -10,6 +10,7 @@ export default {
       name: '',
       email: '',
       phone: '',
+      message: '',
       postUrl: api + '/rg-mail/v1/request-contact',
       formSubmitted: false
     }
@@ -30,7 +31,8 @@ export default {
       axios.post(this.postUrl, {
         name: this.name,
         email: this.email,
-        phone: this.phone
+        phone: this.phone,
+        message: this.message
       })
       .then(res => {
         setTimeout(() => {

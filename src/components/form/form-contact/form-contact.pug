@@ -12,5 +12,8 @@
       input.form-contact__input-field-half(name='phone', v-model='phone', v-validate="'required'", type='text', placeholder='Phone #', :class="{ 'form-contact__input-field--error': errors.has('phone') }")
       .form-contact__error-message(:class="{ 'form-contact__error-message--active': errors.has('phone') }") Please fill this field out.
     .form-contact__group
+      input.form-contact__input-field(name='message', v-model='message', v-validate="'required'", type='text', placeholder='How may we help you?', :class="{ 'form-contact__input-field--error': errors.has('message') }")
+      .form-contact__error-message(:class="{ 'form-contact__error-message--active': errors.has('message') }") Please fill this field out.
+    .form-contact__group
       .form-contact__submit-button(@click='validate()')
         | Submit

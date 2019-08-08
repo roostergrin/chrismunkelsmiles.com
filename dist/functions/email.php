@@ -20,6 +20,7 @@ function request_contact_route () {
   $message .= '<p><h4><strong>Name: </strong></h4>' . $data['name'] . '</p>';
   $message .= '<p><h4><strong>Email: </strong></h4>' . $data['email'] . '</p>';
   $message .= '<p><h4><strong>Phone Number: </strong></h4>' . $data['phone'] . '</p>';
+  $message .= '<p><h4><strong>Purpose of Visit: </strong></h4>' . $data['message'] . '</p>';
   $message .= '</body></html>';
   $table_name = $wpdb->prefix . 'emails';
   $charset_collate = $wpdb->get_charset_collate();
