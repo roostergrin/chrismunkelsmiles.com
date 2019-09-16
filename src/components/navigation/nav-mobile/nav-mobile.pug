@@ -15,7 +15,13 @@
     .nav-mobile__logo-drawer(style='background-image: url(/static/MunkelLogo.png)')
     router-link.nav-mobile__link(v-for='(link, i) in links', :key='i', :to='link.path', v-if='link.mobile')
       .nav-mobile__link-text(v-html='link.name', @click='toggleMenu')
-    .nav-mobile__seperator
+    button(style="text-decoration: underline; margin: 10px 0") Forms
+    div(style="text-align: center; display: flex")
+      a.nav-mobile__cta-form(:href='props.acf.nav.form_link', target='_blank')
+        p(style="color: #BB8648; font-size: 16px") Patient Information
+      a.nav-mobile__cta-form(:href='props.acf.nav.form_link_two', target='_blank')
+        p(style="color: #BB8648; font-size: 16px") Health History
+    .nav-mobile__seperator(style="margin: 0px")
     a.nav-mobile__phone(v-html='props.acf.nav.phone', :href='props.acf.nav.phone_link')
     a.nav-mobile__address(v-html='props.acf.nav.address', :href='props.acf.nav.address_link', target='_blank')
     .nav-mobile__cta-container
