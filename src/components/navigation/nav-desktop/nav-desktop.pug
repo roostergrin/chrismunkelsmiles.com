@@ -59,6 +59,8 @@
             .nav-desktop__active-thumbnail(:style='"backgroundImage: url(" + link.thumbnail + ");"')
             .nav-desktop__active-link(v-html='link.name', @click='changePage(link.path)')
             .nav-desktop__active-sublink(v-for='(sublink, k) in link.children', :key='k', @click='changePage(sublink.path)', v-html='sublink.name', v-if='sublink.meta.navigation')
+            a.nav-desktop__active-sublink(href='/jva-for-tmj') TMJ/JVA
+            a.nav-desktop__active-sublink(href='/sleep-apnea') Sleep Apnea
           .nav-desktop__active-box
           .nav-desktop__active-box
             .nav-desktop__active-contact

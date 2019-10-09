@@ -122,7 +122,7 @@ const router = new VueRouter({
           meta: {
             parent: 'Treatments',
             subnav: true,
-            navigation: true
+            navigation: false
           }
         },
         // {
@@ -162,7 +162,7 @@ const router = new VueRouter({
           meta: {
             parent: 'Treatments',
             subnav: true,
-            navigation: true
+            navigation: false
           }
         }
       ]
