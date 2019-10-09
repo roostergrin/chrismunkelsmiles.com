@@ -18,8 +18,8 @@
       swiper.pages-blog__services(:options='swiperOption')
         swiperSlide.pages-blog__service(v-for='(blog, j) in allBlogs', :key='j', v-if='blog.categories.includes(activeCategories)')
           .pages-blog__service-image-container(@click='visitBlog(blog.slug)')
-            .pages-blog__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"' v-if='blog.acf.blog_posts.image !== "/wp-content/uploads/sleep-apnea.png"')
-            a.pages-blog__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"' v-if='blog.acf.blog_posts.image === "/wp-content/uploads/sleep-apnea.png"' href='https://www.chrismunkelsmiles.com/wp-content/uploads/sleep-apnea.png' target='_blank')
+            .pages-blog__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"' v-if='blog.acf.blog_posts.image !== "/wp-content/uploads/sleap-apnea.png"')
+            a.pages-blog__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"' v-if='blog.acf.blog_posts.image === "/wp-content/uploads/sleap-apnea.png"' href='https://www.chrismunkelsmiles.com/wp-content/uploads/sleap-apnea.png' target='_blank')
           .pages-blog__service-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
           .pages-blog__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
           .pages-blog__service-see-more(@click='visitBlog(blog.slug)') See More...
