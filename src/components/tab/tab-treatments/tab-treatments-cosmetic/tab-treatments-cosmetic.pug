@@ -10,8 +10,8 @@
               .tab-treatments-cosmetic__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
             .tab-treatments-cosmetic__col-blog-text
               .tab-treatments-cosmetic__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
-              .tab-treatments-cosmetic__blog-summary(v-html='truncatePost(blog.acf.blog_posts.content)')
-              .tab-treatments-cosmetic__blog-see-more(@click='visitBlog(blog.slug)') See More...
+              .tab-treatments-cosmetic__blog-summary(v-html='blog.acf.blog_posts.content')
+              //- .tab-treatments-cosmetic__blog-see-more(@click='visitBlog(blog.slug)') See More...
         .tab-treatments-cosmetic__services-title More Services
         .tab-treatments-cosmetic__service-container
           swiper.tab-treatments-cosmetic__services(:options='swiperOption')
