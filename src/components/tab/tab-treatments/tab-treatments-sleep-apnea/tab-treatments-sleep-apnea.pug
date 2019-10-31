@@ -10,8 +10,8 @@
               .tab-treatments-sleep-apnea__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
             .tab-treatments-sleep-apnea__col-blog-text
               .tab-treatments-sleep-apnea__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
-              .tab-treatments-sleep-apnea__blog-summary(v-html='truncatePost(blog.acf.blog_posts.content)')
-              .tab-treatments-sleep-apnea__blog-see-more(@click='visitBlog(blog.slug)') See More...
+              .tab-treatments-sleep-apnea__blog-summary(v-html='blog.acf.blog_posts.content')
+              //- .tab-treatments-sleep-apnea__blog-see-more(@click='visitBlog(blog.slug)') See More...
         .tab-treatments-sleep-apnea__services-title More Services
         .tab-treatments-sleep-apnea__service-container
           swiper.tab-treatments-sleep-apnea__services(:options='swiperOption')
