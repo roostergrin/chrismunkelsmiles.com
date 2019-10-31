@@ -10,8 +10,8 @@
               .tab-treatments-airway__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
             .tab-treatments-airway__col-blog-text
               .tab-treatments-airway__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
-              .tab-treatments-airway__blog-summary(v-html='truncatePost(blog.acf.blog_posts.content)')
-              .tab-treatments-airway__blog-see-more(@click='visitBlog(blog.slug)') See More...
+              .tab-treatments-airway__blog-summary(v-html='blog.acf.blog_posts.content')
+              //- .tab-treatments-airway__blog-see-more(@click='visitBlog(blog.slug)') See More...
         //- .tab-treatments-airway__services-title More Services
         //- .tab-treatments-airway__service-container
         //-   swiper.tab-treatments-airway__services(:options='swiperOption')
