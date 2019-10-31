@@ -10,8 +10,8 @@
               .tab-treatments-restorations__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
             .tab-treatments-restorations__col-blog-text
               .tab-treatments-restorations__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
-              .tab-treatments-restorations__blog-summary(v-html='truncatePost(blog.acf.blog_posts.content)')
-              .tab-treatments-restorations__blog-see-more(@click='visitBlog(blog.slug)') See More...
+              .tab-treatments-restorations__blog-summary(v-html='blog.acf.blog_posts.content')
+              //- .tab-treatments-restorations__blog-see-more(@click='visitBlog(blog.slug)') See More...
         .tab-treatments-restorations__services-title More Services
         .tab-treatments-restorations__service-container
           swiper.tab-treatments-restorations__services(:options='swiperOption')

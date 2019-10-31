@@ -10,8 +10,8 @@
               .tab-treatments-tmj__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
             .tab-treatments-tmj__col-blog-text
               .tab-treatments-tmj__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
-              .tab-treatments-tmj__blog-summary(v-html='truncatePost(blog.acf.blog_posts.content)')
-              .tab-treatments-tmj__blog-see-more(@click='visitBlog(blog.slug)') See More...
+              .tab-treatments-tmj__blog-summary(v-html='blog.acf.blog_posts.content')
+              //- .tab-treatments-tmj__blog-see-more(@click='visitBlog(blog.slug)') See More...
         //- .tab-treatments-tmj__services-title More Services
         //- .tab-treatments-tmj__service-container
         //-   swiper.tab-treatments-tmj__services(:options='swiperOption')
