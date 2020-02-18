@@ -9,14 +9,14 @@
         .nav-desktop__icon-box(@click='toggleModalContact')
           .nav-desktop__calendar-icon
             Icon(name='Calendar')
-          .nav-desktop__calendar-text Book Online Now
+          .nav-desktop__calendar-text Contact Us
         a.nav-desktop__icon-box(:href='props.acf.nav.form_link')
           .nav-desktop__form-icon
             Icon(name='NavForm')
           .nav-desktop__form-text Health History Form
         a.nav-desktop__icon-box(:href='props.acf.nav.form_link_two')
           .nav-desktop__form-icon
-            Icon(name='NavForm')
+            Icon(name='NavForm2')
           .nav-desktop__form-text Ortho & Jaw Form
   transition(name='fade-in-nav')
     .nav-desktop__bottom-background(v-if='!$store.state.nav || activeMenu || activeModal')
@@ -40,7 +40,7 @@
           a.nav-desktop__form(:href='props.acf.nav.form_link', target='_blank')
             Icon(name='NavForm')
           a.nav-desktop__form(:href='props.acf.nav.form_link_two', target='_blank')
-            Icon(name='NavForm')
+            Icon(name='NavForm2')
           .nav-desktop__calendar(@click='toggleModalContact')
             Icon(name='Calendar')
         .nav-desktop__home-logo
@@ -54,9 +54,8 @@
     .nav-desktop__active-background(v-if='activeMenu')
       .nav-desktop__active-header
         .nav-desktop__active-container
-          .nav-desktop__active-background-line
           .nav-desktop__active-box(v-for='(link, j) in links', :key='j', v-if='link.navigation')
-            .nav-desktop__active-thumbnail(:style='"backgroundImage: url(" + link.thumbnail + ");"')
+            //- .nav-desktop__active-thumbnail(:style='"backgroundImage: url(" + link.thumbnail + ");"')
             .nav-desktop__active-link(v-html='link.name', @click='changePage(link.path)')
             .nav-desktop__active-sublink(v-for='(sublink, k) in link.children', :key='k', @click='changePage(sublink.path)', v-html='sublink.name', v-if='sublink.meta.navigation')
             //- a.nav-desktop__active-sublink(href='/jva-for-tmj') TMJ/JVA
@@ -64,7 +63,7 @@
           .nav-desktop__active-box
           .nav-desktop__active-box
             .nav-desktop__active-contact
-              .nav-desktop__active-book-appointment(@click='toggleModalContact') Book an Appointment
+              .nav-desktop__active-book-appointment(@click='toggleModalContact') Request an Exam
               .nav-desktop__active-address(v-html='props.acf.nav.address')
               .nav-desktop__active-phone(v-html='props.acf.nav.phone')
       .nav-desktop__active-footer-line

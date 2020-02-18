@@ -16,7 +16,7 @@
             Icon(name='FooterFacebook')
           a.footer__phone(:href='props.acf.footer.phone_link')
             Icon(name='FooterPhone')
-          .footer__form
+          a.footer__form(:href='props.acf.footer.form_link', target='_blank')
             Icon(name='FooterForm')
           .footer__calendar(@click='toggleModalContact')
             Icon(name='FooterCalendar')

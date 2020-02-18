@@ -16,6 +16,6 @@
           .custom-home-appointment__col-right--title(v-html='props.right_treatment.title')
           .custom-home-appointment__col-right--content(v-html='props.right_treatment.content')
       center
-        .custom-home-appointment__button(@click='toggleModalContact') Book an Appointment
+        .custom-home-appointment__button(@click='toggleModalContact') Request an Exam
   transition(name='fade-in-nav')
     ModalContact(v-if='activeModal', @hideModalContact='toggleModalContact')

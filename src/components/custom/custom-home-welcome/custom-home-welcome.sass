@@ -14,11 +14,12 @@
 
   &__black-bar
     position: absolute
-    top: 90px
-    left: 290px
+    top: 110px
+    left: 350px
     background: $grayline
     width: 2px
-    height: 150px
+    height: calc(220px - 9vw)
+    min-height: 96px
 
     @media(max-width: $screen-sm)
       display: none
@@ -42,8 +43,8 @@
         margin-left: 0
 
   &__content
-    margin-top: -16px
-    margin-left: 300px
+    margin-top: -32px
+    margin-left: 360px
 
     @media(max-width: $screen-sm)
       margin-top: 0

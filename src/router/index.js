@@ -79,7 +79,7 @@ const router = new VueRouter({
     },
     {
       path: '/treatments',
-      name: 'Treatments',
+      name: 'Family and Cosmetic Dentistry',
       navigation: true,
       thumbnail: '/static/TreatmentThumb.png',
       component: Treatments,
@@ -117,7 +117,7 @@ const router = new VueRouter({
         },
         {
           path: '/treatments#tmj-jva',
-          name: 'TMJ/JVA',
+          name: 'TMJ and Sleep',
           slug: 'tmj-jva',
           meta: {
             parent: 'Treatments',
