@@ -221,11 +221,8 @@
     right: 0
     z-index: 999
     background: $white
-    width: 40%
+    width: 100%
     height: 100%
-    border-width: 0 0 0 10px
-    border-style: solid
-    border-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1)) 1 100%
 
 
   &__active-header
@@ -239,15 +236,14 @@
     position: relative
     flex-wrap: wrap
     margin-bottom: 32px
-    max-width: 800px
+    padding-right: calc(30vw - 150px)
     height: calc(100% - 137px)
+    max-width: 100%
 
   &__active-box
     width: 100%
     margin-bottom: 16px
-    padding-right: 40px
-    text-align: left
-    padding-left: 40px
+    text-align: right
 
   &__active-thumbnail
     @extend .img-norm
