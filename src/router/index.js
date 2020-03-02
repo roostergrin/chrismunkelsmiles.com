@@ -117,7 +117,7 @@ const router = new VueRouter({
         },
         {
           path: '/treatments#tmj-jva',
-          name: 'TMJ and Sleep',
+          name: 'TMJ, Sleep Therapy & Airway Orthodontics',
           slug: 'tmj-jva',
           meta: {
             parent: 'Treatments',
