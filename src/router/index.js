@@ -136,9 +136,9 @@ const router = new VueRouter({
         //   }
         // },
         {
-          path: '/treatments#airway-oriented-orthodontics',
-          name: 'Airway-Oriented Orthodontics',
-          slug: 'airway-oriented-orthodontics',
+          path: '/treatments#airway-orthodontics',
+          name: 'Airway Orthodontics',
+          slug: 'airway-orthodontics',
           meta: {
             parent: 'Treatments',
             subnav: true,
