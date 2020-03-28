@@ -8,6 +8,7 @@ import AboutUs from '@/pages/about-us/about-us'
 // import Tech from '@/pages/about-us/tech/tech'
 // import OfficeTour from '@/pages/about-us/office-tour/office-tour'
 import Treatments from '@/pages/treatments/treatments'
+import TSA from '@/pages/tsa/tsa'
 import FAQ from '@/pages/faq/faq'
 import Contact from '@/pages/contact/contact'
 import Blog from '@/pages/blog/blog'
@@ -114,17 +115,18 @@ const router = new VueRouter({
             subnav: true,
             navigation: true
           }
-        },
-        {
-          path: '/treatments#tmj-jva',
-          name: 'TMJ, Sleep Therapy & Airway Orthodontics',
-          slug: 'tmj-jva',
-          meta: {
-            parent: 'Treatments',
-            subnav: true,
-            navigation: true
-          }
-        },
+        }
+        // remember to add comma!
+        // {
+        //   path: '/treatments#tmj-jva',
+        //   name: 'TMJ, Sleep Therapy & Airway Orthodontics',
+        //   slug: 'tmj-jva',
+        //   meta: {
+        //     parent: 'Treatments',
+        //     subnav: true,
+        //     navigation: true
+        //   }
+        // },
         // {
         //   path: '/treatments#kids',
         //   name: 'Kids',
@@ -135,32 +137,85 @@ const router = new VueRouter({
         //     navigation: true
         //   }
         // },
+        // {
+        //   path: '/treatments#airway-orthodontics',
+        //   name: 'Airway Orthodontics',
+        //   slug: 'airway-orthodontics',
+        //   meta: {
+        //     parent: 'Treatments',
+        //     subnav: true,
+        //     navigation: true
+        //   }
+        // },
+        // {
+        //   path: '/treatments#tech',
+        //   name: 'Technology',
+        //   slug: 'tech',
+        //   meta: {
+        //     parent: 'Treatments',
+        //     subnav: true,
+        //     navigation: true
+        //   }
+        // },
+        // {
+        //   path: '/treatments#sleep-therapy',
+        //   name: 'Sleep Therapy',
+        //   slug: 'sleep-therapy',
+        //   meta: {
+        //     parent: 'Treatments',
+        //     subnav: true,
+        //     navigation: true
+        //   }
+        // }
+      ]
+    },
+    {
+      // path: '/tmj-sleep-therapy-airway-orthodontics/#tmj-jva',
+      path: '/tmj-sleep-therapy-airway-orthodontics',
+      name: 'TMJ, Sleep Therapy & Airway Orthodontics',
+      // slug: 'tmj-jva',
+      navigation: true,
+      thumbnail: '/static/TreatmentThumb.png',
+      // component: Treatments,
+      component: TSA,
+      mobile: true,
+      children: [
         {
-          path: '/treatments#airway-orthodontics',
+          path: '/tmj-sleep-therapy-airway-orthodontics#tmj-jva',
+          name: 'TMJ, Sleep Therapy & Airway Orthodontics',
+          slug: 'tmj-jva',
+          meta: {
+            parent: 'TSA',
+            subnav: true,
+            navigation: true
+          }
+        },
+        {
+          path: '/tmj-sleep-therapy-airway-orthodontics#airway-orthodontics',
           name: 'Airway Orthodontics',
           slug: 'airway-orthodontics',
           meta: {
-            parent: 'Treatments',
+            parent: 'TSA',
             subnav: true,
             navigation: true
           }
         },
         {
-          path: '/treatments#tech',
+          path: '/tmj-sleep-therapy-airway-orthodontics#tech',
           name: 'Technology',
           slug: 'tech',
           meta: {
-            parent: 'Treatments',
+            parent: 'TSA',
             subnav: true,
             navigation: true
           }
         },
         {
-          path: '/treatments#sleep-therapy',
+          path: '/tmj-sleep-therapy-airway-orthodontics#sleep-therapy',
           name: 'Sleep Therapy',
           slug: 'sleep-therapy',
           meta: {
-            parent: 'Treatments',
+            parent: 'TSA',
             subnav: true,
             navigation: true
           }

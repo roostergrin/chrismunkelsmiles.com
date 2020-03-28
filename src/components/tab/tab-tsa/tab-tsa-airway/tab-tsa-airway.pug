@@ -1,0 +1,32 @@
+.tab-tsa-airway(v-if='loading')
+  .tab-tsa-airway__background
+    .tab-tsa-airway__container
+      .tab-tsa-airway__content-box
+        .tab-tsa-airway__title(v-html='props.title')
+        //- .tab-tsa-airway__content(v-html='props.content')
+        .tab-tsa-airway__blog-container
+          .tab-tsa-airway__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(11)')
+            .tab-tsa-airway__col-blog-image(@click='visitBlog(blog.slug)')
+              .tab-tsa-airway__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+            .tab-tsa-airway__col-blog-text
+              .tab-tsa-airway__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
+              .tab-tsa-airway__blog-summary(v-html='blog.acf.blog_posts.content')
+              //- .tab-tsa-airway__blog-see-more(@click='visitBlog(blog.slug)') See More...
+        //- .tab-tsa-airway__services-title More Services
+        //- .tab-tsa-airway__service-container
+        //-   swiper.tab-tsa-airway__services(:options='swiperOption')
+        //-     swiperSlide.tab-tsa-airway__service(v-for='(blog, j) in allBlogs', :key='j', v-if='blog.categories.includes(6) && !blog.tags.includes(11)')
+        //-       .tab-tsa-airway__service-image-container(@click='visitBlog(blog.slug)')
+        //-         .tab-tsa-airway__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+        //-       .tab-tsa-airway__service-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
+        //-       .tab-tsa-airway__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
+        //-       .tab-tsa-airway__service-see-more(@click='visitBlog(blog.slug)') See More...
+        //-   .tab-tsa-airway__prev-btn
+        //-     Icon(name='LeftCarot')
+        //-   .tab-tsa-airway__next-btn
+        //-     Icon(name='RightCarot')
+        //- .tab-tsa-airway__service-index
+        //-   .tab-tsa-airway__service-link(v-for='(blog, k) in allBlogs', :key='k', v-if='blog.categories.includes(6)', @click='visitBlog(blog.slug)')
+        //-     .tab-tsa-airway__service-text(v-html='blog.acf.blog_posts.title')
+        //-     span  +
+        

@@ -1,0 +1,4 @@
+.hero-image-tsa
+  .hero-image-tsa__background(:style='"backgroundImage: url(" + props.background + ");"')
+    .hero-image-tsa__title(v-html='props.title')
+  .hero-home__waypoint-scroll(v-waypoint='{ active: true, callback: scrolled}')

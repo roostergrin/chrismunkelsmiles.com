@@ -1,0 +1,10 @@
+.tab-tsa
+  transition(name='fade-in-nav', v-if='$route.hash === "" || $route.hash === "#tmj-jva"')
+    TabTsaTMJ(:props='props.tab_treatments_tmj')
+  transition(name='fade-in-nav', v-if='$route.hash === "#airway-orthodontics"')
+    TabTsaAirway(:props='props.tab_treatments_airway')
+  transition(name='fade-in-nav', v-if='$route.hash === "#tech"')
+    TabAboutTech(:props='props.tab_about_tech')
+  transition(name='fade-in-nav', v-if='$route.hash === "#sleep-therapy"')
+    TabTsaSleepApnea(:props='props.tab_treatments_sleep_therapy')
+  

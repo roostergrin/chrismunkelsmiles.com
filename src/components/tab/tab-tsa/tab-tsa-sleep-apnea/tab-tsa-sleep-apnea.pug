@@ -1,0 +1,33 @@
+.tab-tsa-sleep-apnea(v-if='loading')
+  .tab-tsa-sleep-apnea__background
+    .tab-tsa-sleep-apnea__container
+      .tab-tsa-sleep-apnea__content-box
+        .tab-tsa-sleep-apnea__title(v-html='props.title')
+        //- .tab-tsa-sleep-apnea__content(v-html='props.content')
+        .tab-tsa-sleep-apnea__blog-container
+          .tab-tsa-sleep-apnea__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(17)')
+            .tab-tsa-sleep-apnea__col-blog-image(@click='visitBlog(blog.slug)')
+              .tab-tsa-sleep-apnea__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+            .tab-tsa-sleep-apnea__col-blog-text
+              .tab-tsa-sleep-apnea__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
+              .tab-tsa-sleep-apnea__blog-summary(v-html='blog.acf.blog_posts.content')
+              //- .tab-tsa-sleep-apnea__blog-see-more(@click='visitBlog(blog.slug)') See More...
+        .tab-tsa-sleep-apnea__services-title More Services
+        .tab-tsa-sleep-apnea__service-container
+          swiper.tab-tsa-sleep-apnea__services(:options='swiperOption')
+            swiperSlide.tab-tsa-sleep-apnea__service(v-for='(blog, j) in allBlogs', :key='j', v-if='!blog.tags.includes(17)')
+              .tab-tsa-sleep-apnea__service-image-container(@click='visitBlog(blog.slug)')
+                .tab-tsa-sleep-apnea__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+              .tab-tsa-sleep-apnea__service-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
+              .tab-tsa-sleep-apnea__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
+              .tab-tsa-sleep-apnea__service-see-more(@click='visitBlog(blog.slug)') See More...
+          .tab-tsa-sleep-apnea__container-pagination(v-if='numOfServices > 3')
+            .tab-tsa-sleep-apnea__pagination(slot='pagination')
+          .tab-tsa-sleep-apnea__prev-btn(v-if='numOfServices > 3')
+            Icon(name='LeftCarot')
+          .tab-tsa-sleep-apnea__next-btn(v-if='numOfServices > 3')
+            Icon(name='RightCarot')
+        .tab-tsa-sleep-apnea__service-index
+          .tab-tsa-sleep-apnea__service-link(v-for='(blog, k) in allBlogs', :key='k', v-if='blog.categories.includes(16)', @click='visitBlog(blog.slug)')
+            .tab-tsa-sleep-apnea__service-text {{ blog.acf.blog_posts.title }} +
+        

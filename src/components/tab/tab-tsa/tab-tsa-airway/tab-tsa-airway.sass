@@ -1,0 +1,218 @@
+.tab-tsa-airway
+
+  &__container
+    @extend .container
+    margin-top: 64px
+
+    @media(max-width: $screen-sm)
+      margin-top: 0
+      padding: 0 30px
+
+  &__content-box
+    margin: 0 auto
+    padding-bottom: 64px
+    max-width: 860px
+
+    @media(max-width: $screen-sm)
+      padding-bottom: 0
+
+  &__title
+    margin-bottom: 48px
+    text-align: center
+    color: $marigold
+    font-size: 64px
+    font-style: italic
+
+    @media(max-width: $screen-sm)
+      margin-bottom: 32px
+
+  &__content
+    margin: 0 auto
+    margin-bottom: 48px
+    width: 743px
+
+    @media(max-width: $screen-sm)
+      margin-bottom: 32px
+      width: 100%
+
+  &__blog-container
+    margin: 0 auto
+    max-width: 760px
+
+  &__blog
+    display: flex
+    flex-direction: column
+
+    @media(max-width: $screen-sm)
+      display: block
+      margin-bottom: 32px
+
+    // &:nth-child(even)
+    //   flex-direction: row-reverse
+
+      .tab-tsa-airway__blog-title
+        text-align: right
+
+        @media(max-width: $screen-sm)
+          text-align: left
+
+      .tab-tsa-airway__col-blog-text
+        padding-right: 25px
+
+  &__col-blog-image,
+  &__col-blog-text
+    display: flex
+    flex-direction: column
+    justify-content: center
+    width: 100%
+    margin-bottom: 20px
+
+    @media(max-width: $screen-sm)
+      display: block
+
+  &__blog-image
+    @extend .img-norm
+    margin: auto
+    width: 360px
+    height: 472px
+
+    @media(max-width: $screen-sm)
+      margin-bottom: 16px
+      width: 100%
+      height: 360px
+
+    &:hover
+      cursor: pointer
+
+  &__blog-title
+    margin-bottom: 18px
+    color: $marigold
+    font-size: 48px
+    font-style: italic
+
+    @media(max-width: $screen-sm)
+      display: block
+      margin-bottom: 16px
+
+    &:hover
+      cursor: pointer
+
+  &__blog-see-more
+    text-align: right
+
+    &:hover
+      cursor: pointer
+
+  &__services-title
+    margin-top: 96px
+    text-align: center
+    color: $marigold
+    font-size: 48px
+    font-style: italic
+
+    @media(max-width: $screen-sm)
+      margin-top: 32px
+
+  &__service
+    padding: 12px
+
+  &__service-image
+    @extend .img-norm
+    margin-bottom: 18px
+    width: 100%
+    height: 166px
+
+    @media(max-width: $screen-sm)
+      height: 240px
+
+    &:hover
+      cursor: pointer
+
+  &__service-title
+    margin-bottom: 24px
+    color: $marigold
+    font-size: 18px
+    font-weight: 600
+
+    &:hover
+      cursor: pointer
+
+  &__service-see-more
+    display: block
+    margin-top: 24px
+    text-align: right
+
+    &:hover
+      cursor: pointer
+
+  &__service-container
+    position: relative
+
+  &__service-index
+    column-count: 3
+    margin-top: 32px
+    padding: 12px
+
+    @media(max-width: $screen-sm)
+      column-count: 2
+
+  &__container-pagination
+    display: flex
+    position: relative
+    justify-content: center
+
+  &__pagination
+    display: flex
+    position: relative
+
+  &__bullet
+    margin: 32px 5px 0
+    border: 1px solid $black
+    border-radius: 50%
+    width: 10px
+    height: 10px
+
+    &:focus
+      outline: none
+
+    &:hover
+      cursor: pointer
+
+  &__bullet-active
+    background-color: $black
+
+  &__prev-btn,
+  &__next-btn
+    position: absolute
+    top: 160px
+    z-index: 96
+    border-radius: 50%
+    width: 42px
+    height: 42px
+
+    @media(max-width: $screen-sm)
+      display: none
+
+    &:hover
+      cursor: pointer
+
+    &:focus
+      outline: none
+
+  &__prev-btn
+    left: -100px
+
+  &__next-btn
+    right: -100px
+
+  &__service-link
+    display: block
+    margin-bottom: 4px
+    color: $marigold
+    font-size: 18px
+
+    &:hover
+      cursor: pointer
+
+  &__service-text
+    display: inline-block

@@ -1,0 +1,34 @@
+.tab-tsa-tmj(v-if='loading && props')
+  .tab-tsa-tmj__background
+    .tab-tsa-tmj__container
+      .tab-tsa-tmj__content-box
+        .tab-tsa-tmj__title(v-html='props.title')
+        //- .tab-tsa-tmj__content(v-html='props.content')
+        .tab-tsa-tmj__blog-container
+          .tab-tsa-tmj__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(15)')
+            .tab-tsa-tmj__col-blog-image(@click='visitBlog(blog.slug)')
+              .tab-tsa-tmj__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+            .tab-tsa-tmj__col-blog-text
+              .tab-tsa-tmj__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
+              .tab-tsa-tmj__blog-summary(v-html='blog.acf.blog_posts.content')
+              //- .tab-tsa-tmj__blog-see-more(@click='visitBlog(blog.slug)') See More...
+        //- .tab-tsa-tmj__services-title More Services
+        //- .tab-tsa-tmj__service-container
+        //-   swiper.tab-tsa-tmj__services(:options='swiperOption')
+        //-     swiperSlide.tab-tsa-tmj__service(v-for='(blog, j) in allBlogs', :key='j', v-if='!blog.tags.includes(15)')
+        //-       .tab-tsa-tmj__service-tile(@click='visitBlog(blog.slug)')
+        //-         .tab-tsa-tmj__service-image-container
+        //-           .tab-tsa-tmj__service-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+        //-         .tab-tsa-tmj__service-title(v-html='blog.acf.blog_posts.title')
+        //-         .tab-tsa-tmj__service-content(v-html='truncateService(blog.acf.blog_posts.content)')
+        //-         .tab-tsa-tmj__service-see-more See More...
+        //-   .tab-tsa-tmj__container-pagination(v-if='numOfServices > 3')
+        //-     .tab-tsa-tmj__pagination(slot='pagination')
+        //-   .tab-tsa-tmj__prev-btn(v-if='numOfServices > 3')
+        //-     Icon(name='LeftCarot')
+        //-   .tab-tsa-tmj__next-btn(v-if='numOfServices > 3')
+        //-     Icon(name='RightCarot')
+        //- .tab-tsa-tmj__service-index
+        //-   .tab-tsa-tmj__service-link(v-for='(blog, k) in allBlogs', :key='k', @click='visitBlog(blog.slug)')
+        //-     .tab-tsa-tmj__service-text {{ blog.acf.blog_posts.title }} +
+        
