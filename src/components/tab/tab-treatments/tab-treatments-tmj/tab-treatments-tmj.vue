@@ -81,7 +81,6 @@ export default {
         this.loading = true
         this.allBlogs = selectedBlogs
         this.numOfServices = selectedServices.length
-        console.log(selectedBlogs)
         clearInterval(fillBlogs)
       }
     }, 100)

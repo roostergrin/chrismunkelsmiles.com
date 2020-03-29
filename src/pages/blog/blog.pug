@@ -1,10 +1,14 @@
 .pages-blog(v-if='blog')
   .pages-blog__hero(:style='"backgroundImage: url(" + blog.acf.blog_posts.hero + ");"')
   .pages-blog__background
-    router-link.pages-blog__top-back-treatment(to='/treatments', v-if='blog.categories[0] !== 12')
+    router-link.pages-blog__top-back-treatment(to='/treatments', v-if='blog.categories[0] <= 4')
       .pages-blog__icon-back
         Icon(name='LeftCarot')
-      .pages-blog__back-text Back to Treatments
+      .pages-blog__back-text Back to Family and Cosmetic Dentistry
+    router-link.pages-blog__top-back-treatment(to='/tmj-sleep-therapy-airway-orthodontics', v-if='blog.categories[0] === 6 || blog.categories[0] === 14 || blog.categories[0] === 16')
+      .pages-blog__icon-back
+        Icon(name='LeftCarot')
+      .pages-blog__back-text Back to TMJ, Sleep Therapy & Airway Orthodontics
     router-link.pages-blog__top-back-faq(to='/faq', v-if='blog.categories[0] === 12')
       .pages-blog__icon-back
         Icon(name='LeftCarot')

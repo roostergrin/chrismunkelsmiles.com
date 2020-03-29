@@ -182,8 +182,18 @@ const router = new VueRouter({
       children: [
         {
           path: '/tmj-sleep-therapy-airway-orthodontics#tmj-jva',
-          name: 'TMJ, Sleep Therapy & Airway Orthodontics',
+          name: 'TMJ',
           slug: 'tmj-jva',
+          meta: {
+            parent: 'TSA',
+            subnav: true,
+            navigation: true
+          }
+        },
+        {
+          path: '/tmj-sleep-therapy-airway-orthodontics#sleep-therapy',
+          name: 'Sleep Therapy',
+          slug: 'sleep-therapy',
           meta: {
             parent: 'TSA',
             subnav: true,
@@ -204,16 +214,6 @@ const router = new VueRouter({
           path: '/tmj-sleep-therapy-airway-orthodontics#tech',
           name: 'Technology',
           slug: 'tech',
-          meta: {
-            parent: 'TSA',
-            subnav: true,
-            navigation: true
-          }
-        },
-        {
-          path: '/tmj-sleep-therapy-airway-orthodontics#sleep-therapy',
-          name: 'Sleep Therapy',
-          slug: 'sleep-therapy',
           meta: {
             parent: 'TSA',
             subnav: true,

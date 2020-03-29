@@ -6,8 +6,8 @@
         //- .tab-tsa-airway__content(v-html='props.content')
         .tab-tsa-airway__blog-container
           .tab-tsa-airway__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(11)')
-            .tab-tsa-airway__col-blog-image(@click='visitBlog(blog.slug)')
-              .tab-tsa-airway__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+            //- .tab-tsa-airway__col-blog-image(@click='visitBlog(blog.slug)')
+            //-   .tab-tsa-airway__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
             .tab-tsa-airway__col-blog-text
               .tab-tsa-airway__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
               .tab-tsa-airway__blog-summary(v-html='blog.acf.blog_posts.content')
