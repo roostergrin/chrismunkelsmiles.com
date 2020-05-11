@@ -1,0 +1,7 @@
+.nav-subnav
+  .nav-subnav__scroll-point
+  .nav-subnav__background
+    .nav-subnav__label-container
+      .nav-subnav__background-line
+      .nav-subnav__labels(v-for='(section, i) in props.sections', :key='i', @click='changeTab(section, i)')
+        .nav-subnav__label(v-html='section.section', :class='{ "nav-subnav__label--active": $route.hash === section.hash || (i === 0 && $route.hash === "") }')

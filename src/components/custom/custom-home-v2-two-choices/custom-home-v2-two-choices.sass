@@ -1,0 +1,63 @@
+.custom-home-v2-two-choices
+  width: 100%
+  @media screen and ( min-width: 1400px )
+    width: 1000px
+
+  &__container
+    @extend .container--flex
+    position: relative
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    background: $white
+    padding: 0
+    max-width: unset
+
+    @media(max-width: $screen-sm)
+      display: block
+      padding: 0 10px 20px
+
+  &__title
+    padding: 30px 10px
+    text-align: center
+    color: $tussok
+    font-size: 64px
+
+  &__cards-ctnr
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    max-width: 1400px
+    @media screen and ( max-width: $screen-sm )
+      flex-direction: column
+  
+  &__card-ctnr
+    display: flex
+    justify-content: center
+    width: 50%
+    @media screen and ( max-width: $screen-sm )
+      margin-top: 20px
+    &:nth-child(1) > div
+      border: 2px solid $color2
+    &:nth-child(2) > div
+      border: 2px solid $color3
+
+  &__card
+    display: flex
+    flex-direction: column
+    align-items: center
+    transition: all 0.1s linear
+    box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.5)
+    cursor: pointer
+    width: fit-content
+    &:hover
+      transform: scale(1.05)
+
+  &__card-text
+    display: flex
+    align-items: center
+    padding: 2em
+    max-width: 360px
+    text-align: center
+    font-size: 1.3em

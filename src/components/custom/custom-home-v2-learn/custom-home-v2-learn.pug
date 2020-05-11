@@ -1,0 +1,12 @@
+.custom-home-v2-learn
+  .custom-home-v2-learn__background
+    .custom-home-v2-learn__container
+      .custom-home-v2-learn__title(v-html='props.title')
+      //- .custom-home-v2-learn__content(v-html='props.content')
+      .custom-home-v2-learn__columns
+        .custom-home-v2-learn__column(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(13)')
+          .custom-home-v2-learn__image-box(@click='visitBlog(blog.slug)')
+            .custom-home-v2-learn__image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+          .custom-home-v2-learn__name(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
+          .custom-home-v2-learn__description(v-html='truncateService(blog.acf.blog_posts.content)')
+          .custom-home-v2-learn__see-more(@click='visitBlog(blog.slug)') See More...

@@ -1,0 +1,61 @@
+.custom-home-v2-welcome
+
+  &__container
+    @extend .container--flex
+    position: relative
+    justify-content: center
+    margin-top: -3px
+    background: rgba(186, 135, 72, 0.1)
+    padding: 0 0 60px
+    max-width: unset
+
+    @media(max-width: $screen-sm)
+      display: block
+      padding: 0 10px 20px
+
+  &__black-bar
+    display: none
+    position: absolute
+    top: 110px
+    left: 350px
+    background: $grayline
+    width: 2px
+    height: calc(220px - 9vw)
+    min-height: 96px
+
+    @media(max-width: $screen-sm)
+      display: none
+
+  &__title
+    padding: 30px 10px
+    width: 100%
+    text-align: center
+    text-decoration: underline
+    line-height: 64px
+    color: $tussok
+    font-size: 64px
+    font-style: italic
+
+    @media(max-width: $screen-sm)
+      line-height: 48px
+      font-size: 48px
+
+    // span
+    //   margin-left: 120px
+
+    //   @media(max-width: $screen-sm)
+    //     margin-left: 0
+
+  &__content
+    border: 1px solid $tussok
+    -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.5)
+    -moz-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.5)
+    box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.5)
+    background: $white
+    padding: 50px
+    width: 80%
+    color: $black
+
+    @media(max-width: $screen-sm)
+      padding: 20px
+      width: 100%

@@ -1,0 +1,12 @@
+.pages-home-v2
+  Loader(v-show='loading')
+  HeroHome
+  div(v-if='props && !loading')
+    CustomHomeV2Welcome(:props='props.acf.custom_home_v2_welcome')
+    .pages-home-v2__combined-choices-testimonials
+      CustomHomeV2TwoChoices(:props='props.acf.custom_home_v2_two_choices')
+      CustomHomeV2Testimonial(:props='props.acf.custom_home_v2_testimonial')
+    //- CustomHomeWhy(:props='props.acf.custom_home_v2_why')
+    //- CustomHomeAppointment(:props='props.acf.custom_home_v2_appointment')
+    CustomHomeV2Learn(:props='props.acf.custom_home_v2_learn')
+      

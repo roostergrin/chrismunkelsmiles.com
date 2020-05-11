@@ -1,0 +1,419 @@
+.nav-desktop-v2
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 999
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .2)
+  width: 100%
+
+  @media(max-width: $screen-sm)
+    display: none
+
+  &__top-background
+    transition: all 0.8s ease-in-out
+    background: $tussok
+    padding: 8px 0
+    height: 37px
+
+  &__icon-box
+    display: flex
+    float: left
+    margin: 0 12px
+
+    &:hover
+      cursor: pointer
+
+  &__phone-icon,
+  &__calendar-icon,
+  &__form-icon
+    svg
+      margin-right: 4px
+      width: 18px
+      height: 18px
+      fill: $white
+
+  &__bottom-background
+    position: relative
+    transition: all 0.8s ease-in-out
+    z-index: 1000
+    background: $white
+    width: 100%
+    height: 100px
+
+  &__background-line
+    position: absolute
+    top: 50%
+    left: 0
+    background: $black
+    width: 100%
+    height: 1px
+
+  &__top-container
+    display: block
+    margin: 0 auto
+    max-width: 1161px
+    font-size: 14px
+
+  &__phone-text,
+  &__calendar-text,
+  &__form-text
+    margin-top: 2px
+    color: $white
+
+  &__bottom-container
+    @extend .container
+    max-width: unset
+
+  &__row
+    @extend .container--flex
+    margin-top: 38px
+    padding: 0 5%
+    max-width: unset
+
+  &__home-icons
+    @extend .clearfix
+    display: block
+
+    @support(display: grid)
+      display: flex
+
+  &__phone,
+  &__form,
+  &__calendar
+    float: left
+    margin: 0 5px
+    width: 20px
+    height: 24px
+
+    svg
+      width: 20px
+      height: 20px
+      fill: $white
+
+    &:hover
+      cursor: pointer
+
+  &__home-logo
+    position: absolute
+    top: 0
+    left: 250px
+    transition: all 0.8s ease-in-out
+    svg
+      width: 400px
+      height: 105px
+
+    &--active
+      opacity: 0
+
+    @media screen and ( max-width: 1600px )
+      top: 40px
+      left: 5%
+      svg
+        width: 200px
+        height: 52px
+
+  &__home-links-ctnr
+    display: flex
+    position: relative
+    flex-wrap: wrap
+    justify-content: flex-end
+    margin-left: auto
+    max-width: 80%
+    height: 105px
+
+  &__home-link-box
+    display: flex
+    align-items: center
+    margin: 0 10px
+
+  &__home-link
+    transition: all 0.1s linear
+    border-bottom: 1px solid $tussok
+    cursor: pointer
+    text-align: center
+    color: $white
+    &:hover
+      transform: scale(1.05)
+
+  &__col-left
+    position: absolute
+    top: 10px
+    left: 5%
+    background: $white
+
+  &__bottom-background-links-ctnr
+    display: flex
+    position: relative
+    flex-wrap: wrap
+    justify-content: flex-end
+    margin-left: auto
+    background: $white
+    width: fit-content
+    max-width: 68%
+    height: 100px
+
+  &__bottom-background-link-box
+    display: flex
+    align-items: center
+    margin: 0 10px
+
+  &__bottom-background-link
+    transition: all 0.1s linear
+    border: 1px solid $tussok
+    cursor: pointer
+    padding: 5px 10px
+    text-align: center
+    color: $tussok
+    @media screen and ( max-width: 1450px )
+      font-size: 0.8em
+    &:hover
+      transform: scale(1.05)
+
+  &__col-right
+    position: absolute
+    top: 34px
+    right: 32px
+    background: $white
+    width: 40px
+    text-align: center
+
+  &__logo
+    @extend .img-norm
+    transition: all 0.8s ease-in-out
+    background-size: contain
+    width: 213px
+    height: 72px
+
+  &__hamburger
+    display: inline-flex
+    flex-direction: column
+    border-radius: 50%
+    width: 30px
+    height: 33px
+    overflow: hidden
+
+    &--cross
+      display: inline-flex
+      background: $white
+      width: 30px
+      height: 33px
+      color: $tussok
+      font-size: 36px
+
+      &::before, &::after
+        position: relative
+        top: 8px
+        left: 10px
+        background-color: $tussok
+        width: 3px
+        height: 20px
+        content: ' '
+
+      &::before
+        left: 12px
+        transform: rotate(45deg)
+
+      &::after
+        transform: rotate(-45deg)
+
+      &:hover
+        cursor: pointer
+
+    &--line-one, &--line-two, &--line-three
+      transition: 0.4s
+      margin: 6px 0
+      background-color: $tussok
+      width: 30px
+      height: 3px
+
+    &:hover
+      cursor: pointer
+
+  &__home-hamburger
+    display: inline-flex
+    position: absolute
+    top: 0
+    right: 0
+    flex-direction: column
+    border-radius: 50%
+    width: 30px
+    height: 33px
+    overflow: hidden
+
+    &--cross
+      display: inline-flex
+      background: $white
+      width: 30px
+      height: 33px
+      color: $tussok
+      font-size: 36px
+
+      &::before, &::after
+        position: relative
+        top: 8px
+        left: 10px
+        background-color: $tussok
+        width: 3px
+        height: 20px
+        content: ' '
+
+      &::before
+        left: 12px
+        transform: rotate(45deg)
+
+      &::after
+        transform: rotate(-45deg)
+
+    &--line-one, &--line-two, &--line-three
+      transition: 0.4s
+      margin: 6px 0
+      background-color: $white
+      width: 30px
+      height: 3px
+
+    &:hover
+      cursor: pointer
+
+  &__active-background
+    position: fixed
+    top: 37px
+    right: 0
+    z-index: 999
+    background: $white
+    width: 100%
+    height: 100%
+
+
+  &__active-header
+    position: relative
+    padding-top: 100px
+    height: 100px
+
+  &__active-container
+    @extend .container
+    display: flex
+    position: relative
+    flex-wrap: wrap
+    margin-bottom: 32px
+    padding-right: calc(30vw - 150px)
+    max-width: 100%
+    height: calc(100% - 137px)
+
+  &__active-box
+    margin-bottom: 16px
+    width: 100%
+    text-align: right
+
+    // &:nth-child(3)
+    //   .nav-desktop__active-link
+    //     display: none
+
+    //   .nav-desktop__active-sublink
+    //     &:nth-child(2)
+    //       display: block
+    //       transition: all 0.4s ease-in-out
+    //       margin: 6px 0
+    //       font-size: 20px
+    //       font-weight: 600
+
+    //       &:hover
+    //         cursor: pointer
+    //         color: $tussok
+
+  &__active-thumbnail
+    @extend .img-norm
+    display: inline-block
+    border: 1px solid $marigold
+    width: 90px
+    height: 90px
+
+  &__active-link
+    display: block
+    transition: all 0.4s ease-in-out
+    margin: 6px 0
+    font-size: 20px
+    font-weight: 600
+
+    &:hover
+      cursor: pointer
+      color: $tussok
+
+  &__active-sublink
+    display: block
+    transition: all 0.4s ease-in-out
+    margin: 6px 0
+    font-size: 18px
+
+    // &:nth-child(5)
+    //   font-size: 20px
+    //   font-weight: 600
+    //   margin-top: 16px
+
+    &:hover
+      cursor: pointer
+      color: $tussok
+
+  &__active-book-appointment
+    display: inline-block
+    margin-bottom: 16px
+    border-radius: 10px
+    background: $tussok
+    padding: 10px 27px
+    color: $white
+    font-size: 18px
+
+    &:hover
+      cursor: pointer
+
+  &__active-footer-line
+    position: absolute
+    top: 92vh
+    left: 0
+    background: $grayline
+    width: 100%
+    height: 2px
+
+  &__home-nav
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+
+  &__active-social-media-container
+    display: block
+    position: relative
+    margin: 0 auto
+    width: 100%
+    max-width: 1200px
+
+  &__active-social-media
+    display: flex
+    position: absolute
+    top: -10px
+    right: 32px
+    background: $white
+
+  &__active-address,
+  &__active-phone
+    transition: all 0.4s ease-in-out
+    margin: 16px 0
+    font-size: 16px
+
+    &:hover
+      cursor: pointer
+      color: $tussok
+
+  &__active-facebook,
+  &__active-phone,
+  &__active-form,
+  &__active-calendar
+    margin: 0 8px
+    svg
+      width: 20px
+      height: 20px
+
+    &:hover
+      cursor: pointer
+
+  .fade-in-nav
+    @include fade-in-nav

@@ -1,0 +1,13 @@
+.custom-home-v2-two-choices
+  .custom-home-v2-two-choices__background
+    .custom-home-v2-two-choices__container
+      .custom-home-v2-two-choices__title Our Services
+      .custom-home-v2-two-choices__cards-ctnr
+        .custom-home-v2-two-choices__card-ctnr
+          .custom-home-v2-two-choices__card(@click='changePage(props.link_one_path)')
+            img.custom-home-v2-two-choices__photo(:src='props.link_one_photo')
+            .custom-home-v2-two-choices__card-text(v-html='props.link_one_text')
+        .custom-home-v2-two-choices__card-ctnr
+          .custom-home-v2-two-choices__card(@click='changePage(props.link_two_path)')
+            img.custom-home-v2-two-choices__photo(:src='props.link_two_photo')
+            .custom-home-v2-two-choices__card-text(v-html='props.link_two_text')

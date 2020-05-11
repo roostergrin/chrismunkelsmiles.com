@@ -3,14 +3,46 @@
     .tab-tsa-airway__container
       .tab-tsa-airway__content-box
         .tab-tsa-airway__title(v-html='props.title')
-        //- .tab-tsa-airway__content(v-html='props.content')
-        .tab-tsa-airway__blog-container
-          .tab-tsa-airway__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(11)')
-            //- .tab-tsa-airway__col-blog-image(@click='visitBlog(blog.slug)')
-            //-   .tab-tsa-airway__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
-            .tab-tsa-airway__col-blog-text
-              .tab-tsa-airway__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
-              .tab-tsa-airway__blog-summary(v-html='blog.acf.blog_posts.content')
+        section.tab-tsa-airway__section-1
+          .tab-tsa-airway__section-1-img-ctnr
+            .tab-tsa-airway__section-1-img(:style='"backgroundImage: url(" + props.section_one_img + ");"')
+          .tab-tsa-airway__section-1-text-ctnr
+            .tab-tsa-airway__section-1-text-title(v-html='props.section_one_text_title_a')
+            .tab-tsa-airway__section-1-text-content(v-html='props.section_one_text_content_a')
+            .tab-tsa-airway__section-1-text-title(v-html='props.section_one_text_title_b')
+            .tab-tsa-airway__section-1-text-content(v-html='props.section_one_text_content_b')
+        section.tab-tsa-airway__section-2
+          .tab-tsa-airway__section-2-text-ctnr
+            .tab-tsa-airway__section-2-text-title(v-html='props.section_two_text_title_a')
+            .tab-tsa-airway__section-2-text-content(v-html='props.section_two_text_content_a')
+            .tab-tsa-airway__section-2-imgs-ab-wrapper
+              .tab-tsa-airway__section-2-img-a-ctnr
+                img.tab-tsa-airway__section-2-img-a(:src='props.section_two_img_a')
+              .tab-tsa-airway__section-2-img-b-ctnr
+                img.tab-tsa-airway__section-2-img-b(:src='props.section_two_img_b')
+            .tab-tsa-airway__section-2-text-content Constricted airways prevents adequate breathing resulting in many possible issues.
+          .tab-tsa-airway__section-2-img-c-ctnr
+            img.tab-tsa-airway__section-2-img-c(:src='props.section_two_img_c')
+        section.tab-tsa-airway__section-3
+          .tab-tsa-airway__section-3-title Airway Orthodontics Testimonial Videos
+          .tab-tsa-airway__section-3-videos-ctnr
+            video.tab-tsa-airway__section-3-video(:src='props.section_three_video_a', controls)
+            video.tab-tsa-airway__section-3-video(:src='props.section_three_video_b', controls)
+            video.tab-tsa-airway__section-3-video(:src='props.section_three_video_c', controls)
+
+
+
+
+        //- COMMENTED OUT 05-10-20
+        //- //- .tab-tsa-airway__content(v-html='props.content')
+        //- .tab-tsa-airway__blog-container
+        //-   .tab-tsa-airway__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(11)')
+        //-     //- .tab-tsa-airway__col-blog-image(@click='visitBlog(blog.slug)')
+        //-     //-   .tab-tsa-airway__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+        //-     .tab-tsa-airway__col-blog-text
+        //-       .tab-tsa-airway__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
+        //-       .tab-tsa-airway__blog-summary(v-html='blog.acf.blog_posts.content')
+        //- COMMENTED OUT 05-10-20
               //- .tab-tsa-airway__blog-see-more(@click='visitBlog(blog.slug)') See More...
         //- .tab-tsa-airway__services-title More Services
         //- .tab-tsa-airway__service-container

@@ -1,0 +1,8 @@
+.slider-v2-testimonial
+  swiper.slider-v2-testimonial__slider(:options='swiperOption')
+    swiperSlide.slider-v2-testimonial__slide(v-for='(testimonial, i) in props.testimonials', :key='i')
+      .slider-v2-testimonial__content(v-html='testimonial.testimonial')
+      .slider-v2-testimonial__author
+        | - {{ testimonial.author }}
+  .slider-v2-testimonial__container-pagination
+    .slider-v2-testimonial__pagination(slot='pagination')

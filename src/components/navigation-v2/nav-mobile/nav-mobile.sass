@@ -1,0 +1,187 @@
+.nav-mobile
+  display: none
+  position: fixed
+  z-index: 999
+  background: $white
+  width: 100%
+  height: 84px
+
+  @media(max-width: $screen-sm)
+    display: block
+
+  &__container
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 84px
+    text-align: center
+
+  &__logo-image
+    @extend .img-norm
+    width: 200px
+    height: 60px
+
+  &__hamburger
+    display: inline-flex
+    position: absolute
+    top: 24px
+    right: 30px
+    color: $tussok
+
+    &--cross
+      display: inline-flex
+      position: absolute
+      top: 30px
+      right: 60px
+      animation: crossFade .5s ease forwards
+      color: $tussok
+      font-size: 36px
+
+      @keyframes crossFade
+        0%
+          opacity: 0
+        50%
+          opacity: 0
+        100%
+          opacity: 1
+          z-index: 201
+
+      &::before, &::after
+        position: absolute
+        left: 15px
+        background-color: $tussok
+        width: 2px
+        height: 33px
+        content: ' '
+
+      &::before
+        transform: rotate(45deg)
+
+      &::after
+        transform: rotate(-45deg)
+
+    &--line-one, &--line-two, &--line-three
+      transition: 0.4s
+      margin: 8px 0
+      background-color: $tussok
+      width: 35px
+      height: 3px
+
+  &__drawer
+    position: absolute
+    top: -100%
+    right: -100%
+    animation: slideIn 0.6s ease-in-out forwards
+    opacity: 0
+    z-index: 198
+    border-radius: 50%
+    background: $tussok
+    width: 175vh
+    height: 175vh
+
+
+  &__drawer-container
+    position: absolute
+    top: -100px
+    right: -100%
+    animation: slideIn 0.6s linear forwards
+    opacity: 0
+    z-index: 199
+    border-radius: 50%
+    background: $white
+    width: 175vh
+    height: 175vh
+    overflow: scroll
+
+    @keyframes slideIn
+        0%
+          transform: translate(50%, -50%)
+          opacity: 0
+        50%
+          opacity: 1
+        100%
+          transform: translate(0, 0)
+          opacity: 1
+
+  &__logo-drawer
+    @extend .img-norm
+    margin-bottom: 32px
+    width: 80%
+    height: 100px
+    pointer-events: none
+
+  &__forms-title 
+    margin: 10px 0
+    text-decoration: underline
+    color: $mineshaft
+
+  &__forms-links
+    display: flex
+    text-align: center
+
+  &__form-link
+    color: $tussok
+    font-size: 16px
+
+  &__links
+    display: flex
+    position: relative
+    bottom: 84px
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    animation: linkFade .5s ease forwards
+    background: rgba(255, 255, 255, 1)
+    padding: 2rem 2rem 1rem
+    height: 100vh
+
+    @keyframes linkFade
+      0%
+        opacity: 0
+      50%
+        opacity: 0
+      80%
+        z-index: 200
+      100%
+        opacity: 1
+        z-index: 200
+
+  &__link-text
+    text-align: center
+
+  &__link,
+  &__free-consultation
+    padding: 12px
+
+  &__free-consultation
+    text-align: center
+    color: $black
+
+  &__seperator
+    opacity: 0.5
+    margin: 2px
+    background: $tussok
+    width: 100%
+    height: 3px
+
+  &__phone,
+  &__address
+    display: block
+    margin: 16px 0
+    text-align: center
+
+  &__cta-container
+    display: flex
+
+  &__cta-facebook,
+  &__cta-phone,
+  &__cta-form,
+  &__cta-calendar
+    margin: 0 6px
+
+    svg
+      width: 40px
+      height: 40px
+
+  .fade-in-nav
+    @include fade-in-nav

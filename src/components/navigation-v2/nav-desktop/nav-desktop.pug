@@ -1,0 +1,88 @@
+.nav-desktop-v2(v-if='props')
+  transition(name='fade-in-nav')
+    .nav-desktop-v2__top-background(v-if='!$store.state.nav || activeMenu || activeModal')
+      .nav-desktop-v2__top-container
+        a.nav-desktop-v2__icon-box(:href='props.acf.nav.phone_link')
+          .nav-desktop-v2__phone-icon
+            Icon(name='Phone')
+          .nav-desktop-v2__phone-text(v-html='props.acf.nav.phone')
+        .nav-desktop-v2__icon-box(@click='toggleModalContact')
+          .nav-desktop-v2__calendar-icon
+            Icon(name='Calendar')
+          .nav-desktop-v2__calendar-text Contact Us
+        a.nav-desktop-v2__icon-box(:href='props.acf.nav.form_link')
+          .nav-desktop-v2__form-icon
+            Icon(name='NavForm')
+          .nav-desktop-v2__form-text Health History Form
+        a.nav-desktop-v2__icon-box(:href='props.acf.nav.form_link_two')
+          .nav-desktop-v2__form-icon
+            Icon(name='NavForm2')
+          .nav-desktop-v2__form-text Ortho & Jaw Form
+  transition(name='fade-in-nav')
+    .nav-desktop-v2__bottom-background(v-if='!$store.state.nav || activeMenu || activeModal')
+      .nav-desktop-v2__background-line
+      .nav-desktop-v2__bottom-container
+        router-link.nav-desktop-v2__col-left(to='/')
+          .nav-desktop-v2__logo(style='background-image: url(/static/MunkelLogo.png)', @click='clearMenu')
+        .nav-desktop-v2__bottom-background-links-ctnr
+          .nav-desktop-v2__bottom-background-link-box(v-for='(link, j) in links', :key='j', v-if='link.navigation')
+            .nav-desktop-v2__bottom-background-link(v-html='link.name', @click='changePage(link.path)')
+        //- .nav-desktop-v2__col-right
+        //-   .nav-desktop-v2__hamburger(@click='toggleMenu', :class='{ "nav-desktop-v2__hamburger--scrolled": $store.state.nav }', v-if='!activeMenu')
+        //-     .nav-desktop-v2__hamburger--lines
+        //-       .nav-desktop-v2__hamburger--line-one(:class='{ "nav-desktop-v2__hamburger--line-one--scrolled": $store.state.nav }')
+        //-       .nav-desktop-v2__hamburger--line-two(:class='{ "nav-desktop-v2__hamburger--line-two--scrolled": $store.state.nav }')
+        //-       .nav-desktop-v2__hamburger--line-three(:class='{ "nav-desktop-v2__hamburger--line-three--scrolled": $store.state.nav }')
+        //-   .nav-desktop-v2__hamburger--cross(v-if='activeMenu', @click='toggleMenu')
+  transition(name='fade-in-nav')
+    .nav-desktop-v2__home-nav(v-if='$store.state.nav && !activeMenu && ($route.name === "Home" || $route.name === "Home V2") && !activeModal')
+      .nav-desktop-v2__row
+        .nav-desktop-v2__home-icons
+          a.nav-desktop-v2__phone(:href='props.acf.nav.phone_link')
+            Icon(name='Phone')
+          a.nav-desktop-v2__form(:href='props.acf.nav.form_link', target='_blank')
+            Icon(name='NavForm')
+          a.nav-desktop-v2__form(:href='props.acf.nav.form_link_two', target='_blank')
+            Icon(name='NavForm2')
+          .nav-desktop-v2__calendar(@click='toggleModalContact')
+            Icon(name='Calendar')
+        .nav-desktop-v2__home-logo
+          Icon(name='HomeLogo')
+        .nav-desktop-v2__home-links-ctnr
+          .nav-desktop-v2__home-link-box(v-for='(link, j) in links', :key='j', v-if='link.navigation')
+            .nav-desktop-v2__home-link(v-html='link.name', @click='changePage(link.path)')
+        //- .nav-desktop-v2__home-hamburger(@click='toggleMenu', :class='{ "nav-desktop-v2__hamburger--scrolled": $store.state.nav }', v-if='!activeMenu || !$store.state.nav')
+        //-   .nav-desktop-v2__home-hamburger--lines
+        //-     .nav-desktop-v2__home-hamburger--line-one(:class='{ "nav-desktop-v2__hamburger--line-one--scrolled": $store.state.nav }')
+        //-     .nav-desktop-v2__home-hamburger--line-two(:class='{ "nav-desktop-v2__hamburger--line-two--scrolled": $store.state.nav }')
+        //-     .nav-desktop-v2__home-hamburger--line-three(:class='{ "nav-desktop-v2__hamburger--line-three--scrolled": $store.state.nav }')
+  transition(name='fade-in-nav')
+    .nav-desktop-v2__active-background(v-if='activeMenu')
+      .nav-desktop-v2__active-header
+        .nav-desktop-v2__active-container
+          .nav-desktop-v2__active-box(v-for='(link, j) in links', :key='j', v-if='link.navigation')
+            //- .nav-desktop-v2__active-thumbnail(:style='"backgroundImage: url(" + link.thumbnail + ");"')
+            .nav-desktop-v2__active-link(v-html='link.name', @click='changePage(link.path)')
+            .nav-desktop-v2__active-sublink(v-for='(sublink, k) in link.children', :key='k', @click='changePage(sublink.path)', v-html='sublink.name', v-if='sublink.meta.navigation')
+            //- a.nav-desktop-v2__active-sublink(href='/jva-for-tmj') TMJ/JVA
+            //- a.nav-desktop-v2__active-sublink(href='/sleep-apnea') Sleep Apnea
+          .nav-desktop-v2__active-box
+          .nav-desktop-v2__active-box
+            .nav-desktop-v2__active-contact
+              .nav-desktop-v2__active-book-appointment(@click='toggleModalContact') Request an Exam
+              .nav-desktop-v2__active-address(v-html='props.acf.nav.address')
+              .nav-desktop-v2__active-phone(v-html='props.acf.nav.phone')
+      .nav-desktop-v2__active-footer-line
+        .nav-desktop-v2__active-social-media-container
+          .nav-desktop-v2__active-social-media
+            a.nav-desktop-v2__active-facebook(:href='props.acf.nav.facebook_link', target='_blank')
+              Icon(name='FooterFacebook')
+            a.nav-desktop-v2__active-phone(:href='props.acf.nav.phone_link')
+              Icon(name='FooterPhone')
+            a.nav-desktop-v2__active-form(:href='props.acf.nav.form_link', target='_blank')
+              Icon(name='FooterForm')
+            .nav-desktop-v2__active-calendar(@click='toggleModalContact')
+              Icon(name='FooterCalendar')
+  transition(name='fade-in-nav')
+    ModalContact(v-if='activeModal', @hideModalContact='toggleModalContact')
+

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/pages/home/home'
+import HomeV2 from '@/pages/home-v2/home-v2'
 // const AboutUs = () => import(/* webpackChunkName: "group" */ '@/pages/about-us/about-us')
 import AboutUs from '@/pages/about-us/about-us'
 // import Doctor from '@/pages/about-us/doctor/doctor'
@@ -25,8 +26,15 @@ const router = new VueRouter({
       path: '/',
       name: 'Home',
       navigation: false,
-      component: Home,
+      component: HomeV2,
       mobile: true
+    },
+    {
+      path: '/home-old',
+      name: 'Home Old',
+      navigation: false,
+      component: Home,
+      mobile: false
     },
     {
       path: '/about-us',
