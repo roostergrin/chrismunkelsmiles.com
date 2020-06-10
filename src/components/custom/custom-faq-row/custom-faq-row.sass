@@ -3,6 +3,8 @@
   &__container
     @extend .container
     margin-top: 64px
+    padding: 0 5%
+    max-width: unset
 
     @media(max-width: $screen-sm)
       margin-top: 0
@@ -35,7 +37,7 @@
 
   &__rows
     margin: 0 auto
-    max-width: 760px
+    // max-width: 760px
 
   &__row
     display: flex
@@ -71,6 +73,18 @@
     @media(max-width: $screen-sm)
       display: block
       width: 100%
+
+  &__col-image
+    flex-direction: row
+    align-items: center
+    justify-content: space-evenly
+
+  &__arrow
+    color: $tussok
+    font-size: 96px
+
+    @media(max-width: $screen-sm)
+      display: none
 
   &__image
     @extend .img-norm

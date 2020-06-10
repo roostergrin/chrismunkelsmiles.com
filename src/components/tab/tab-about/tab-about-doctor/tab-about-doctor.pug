@@ -5,6 +5,7 @@
       .tab-about-doctor__bio-content
         .tab-about-doctor__bio-border
         .tab-about-doctor__name(v-html='props.name')
-        .tab-about-doctor__content(v-html='props.content')
-        .tab-about-doctor__image(:style='"backgroundImage: url(" + props.image + ");"')
-        
+        .tab-about-doctor__content()
+          .tab-about-doctor__text(v-html='props.content_before_img')
+          .tab-about-doctor__image(:style='"backgroundImage: url(" + props.image + ");"')
+          .tab-about-doctor__text(v-html='props.content_after_img')

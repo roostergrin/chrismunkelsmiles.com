@@ -7,7 +7,11 @@
         .custom-faq-row__rows
           .custom-faq-row__row(v-for='(row, i) in allBlogs', :key='i', v-if='row.categories.includes(12)')
             router-link.custom-faq-row__col-image(:to='row.slug')
+              .custom-faq-row__arrow(v-if='i % 2 === 0') 
+                | <<
               .custom-faq-row__image(:style='"backgroundImage: url(" + row.acf.blog_posts.image + ");"')
+              .custom-faq-row__arrow(v-if='i % 2 !== 0') 
+                | >>
             .custom-faq-row__col-text
               router-link.custom-faq-row__row-title(v-html='row.acf.blog_posts.title', :to='row.slug')
               .custom-faq-row__description(v-html='truncatePost(row.acf.blog_posts.content)')
