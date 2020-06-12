@@ -2,31 +2,116 @@
 
   &__container
     @extend .container
-    margin-top: 64px
     padding: 0
-    max-width: 90%
-
+    max-width: 100%
     @media(max-width: $screen-sm)
       margin-top: 0
-      padding: 0 30px
 
   &__content-box
     margin: 0 auto
     padding-bottom: 64px
     max-width: 100%
-
     @media(max-width: $screen-sm)
       padding-bottom: 0
 
   &__title
-    margin-bottom: 48px
+    background: $color2
+    padding: 30px
     text-align: center
-    color: $marigold
+    color: $white
     font-size: 64px
-    font-style: italic
-
     @media(max-width: $screen-sm)
-      margin-bottom: 32px
+      font-size: 48px
+
+  &__section-1
+    display: flex
+    flex-direction: column
+    @media screen and (max-width: 1300px)
+      flex-direction: column
+
+  &__section-1-img-ctnr
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.5)
+    background: $color2
+    width: 100%
+    @media screen and (max-width: 1300px)
+      width: 100%
+
+  &__section-1-img
+    width: 100%
+    max-width: 1500px
+
+  &__section-1-text-ctnr
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 30px 5%
+    width: 100%
+    @media(max-width: $screen-sm)
+      padding: 30px
+
+  &__section-1-content-a
+    margin: 20px
+    border: 1px solid $color2
+    box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.5)
+    background: $white
+    padding: 15px
+    max-width: 1500px
+    text-align: center
+
+  &__section-1-title-b
+    margin-top: 30px
+    margin-bottom: 20px
+    padding: 0 5%
+    text-align: center
+    text-decoration: underline
+    color: $color2
+    font-size: 36px
+
+  &__section-1-flex-ctnr-b
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 0 5%
+    width: 100%
+    @media screen and (min-width: 1500px)
+      flex-direction: row
+      align-items: flex-start
+      justify-content: space-around
+      padding: 0
+
+  &__section-1-iframe-b
+    display: flex
+    justify-content: center
+    margin-bottom: 20px
+    width: 100%
+    @media screen and (min-width: 1500px)
+      width: 75%
+
+    iframe
+      width: 100%
+      height: auto
+      min-height: calc(55.5vw)
+
+  &__section-1-content-b
+    border: 1px solid $color2
+    box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.5)
+    padding: 15px
+    width: 100%
+    line-height: 2rem
+    @media screen and (min-width: 1500px)
+      margin-top: 100px
+      width: 15%
+
+
+
+
+
+
+
 
   &__content
     margin: 0 auto

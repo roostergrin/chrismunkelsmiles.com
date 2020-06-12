@@ -47,6 +47,22 @@ function myTimer() {
     revWidget.style.position = 'fixed';
 		revWidget.style.bottom = '20px';
 		revWidget.style.left = '20px';
+		revWidget.style.zIndex = '2';
+    let closeBtn = document.createElement('BUTTON');
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.top = '-10px';
+    closeBtn.style.right = '-10px';
+    closeBtn.style.background = 'white';
+    closeBtn.style.padding = '5px';
+    closeBtn.style.borderRadius = '30px';
+    closeBtn.style.border = '1px solid';
+    closeBtn.style.width = '30px';
+    closeBtn.style.height = '30px';
+    closeBtn.style.lineHeight = '18px';
+    closeBtn.style.color = '#51a8d3';
+    closeBtn.textContent = 'X';
+    closeBtn.addEventListener('click',() => { revWidget.style.display = 'none'; });
+    revWidget.appendChild(closeBtn);
     myStopFunction();
     }
 }

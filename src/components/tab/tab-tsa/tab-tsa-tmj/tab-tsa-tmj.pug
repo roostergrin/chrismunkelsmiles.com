@@ -4,13 +4,28 @@
       .tab-tsa-tmj__content-box
         .tab-tsa-tmj__title(v-html='props.title')
         //- .tab-tsa-tmj__content(v-html='props.content')
-        .tab-tsa-tmj__blog-container
-          .tab-tsa-tmj__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(15)')
-            .tab-tsa-tmj__col-blog-image(@click='visitBlog(blog.slug)')
-              .tab-tsa-tmj__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
-            .tab-tsa-tmj__col-blog-text
-              .tab-tsa-tmj__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
-              .tab-tsa-tmj__blog-summary(v-html='blog.acf.blog_posts.content')
+        section.tab-tsa-tmj__section-1
+          .tab-tsa-tmj__section-1-img-ctnr
+            img.tab-tsa-tmj__section-1-img(:src='props.section_one_img')
+            .tab-tsa-tmj__section-1-content-a(v-html='props.section_one_content_a')
+          .tab-tsa-tmj__section-1-text-ctnr
+          .tab-tsa-tmj__section-1-ctnr-b
+            .tab-tsa-tmj__section-1-title-b(v-html='props.section_one_title_b')
+            .tab-tsa-tmj__section-1-flex-ctnr-b
+              .tab-tsa-tmj__section-1-iframe-b(v-html='props.section_one_iframe_b')
+              .tab-tsa-tmj__section-1-content-b(v-html='props.section_one_content_b')
+
+
+        //- COMMENTED OUT 06-12-20
+        //- .tab-tsa-tmj__blog-container
+        //-   .tab-tsa-tmj__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(15)')
+        //-     .tab-tsa-tmj__col-blog-image(@click='visitBlog(blog.slug)')
+        //-       .tab-tsa-tmj__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+        //-     .tab-tsa-tmj__col-blog-text
+        //-       .tab-tsa-tmj__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
+        //-       .tab-tsa-tmj__blog-summary(v-html='blog.acf.blog_posts.content')
+        //- COMMENTED OUT 06-12-20
+
               //- .tab-tsa-tmj__blog-see-more(@click='visitBlog(blog.slug)') See More...
         //- .tab-tsa-tmj__services-title More Services
         //- .tab-tsa-tmj__service-container
