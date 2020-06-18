@@ -4,14 +4,32 @@
       .tab-treatments-cleaning__content-box
         .tab-treatments-cleaning__title(v-html='props.title')
         //- .tab-treatments-cleaning__content(v-html='props.content')
-        .tab-treatments-cleaning__blog-container
-          .tab-treatments-cleaning__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(7)')
-            .tab-treatments-cleaning__col-blog-image(@click='visitBlog(blog.slug)')
-              .tab-treatments-cleaning__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
-            .tab-treatments-cleaning__col-blog-text
-              .tab-treatments-cleaning__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
-              .tab-treatments-cleaning__blog-summary(v-html='(blog.acf.blog_posts.content)')
-              //- .tab-treatments-cleaning__blog-see-more(@click='visitBlog(blog.slug)') See More...
+
+        section.tab-treatments-cleaning__section-1
+          .tab-treatments-cleaning__section-1-a
+            .tab-treatments-cleaning__section-1-text-ctnr-a
+              .tab-treatments-cleaning__section-1-title(v-html='props.section_one_title')
+              .tab-treatments-cleaning__section-1-text-a(v-html='props.section_one_text_a')
+            .tab-treatments-cleaning__section-1-img-ctnr
+              img.tab-treatments-cleaning__section-1-img(:src='props.section_one_img')
+          .tab-treatments-cleaning__section-1-text-ctnr-b(v-html='props.section_one_text_b')
+        section.tab-treatments-cleaning__section-2
+          .tab-treatments-cleaning__section-2-title(v-html='props.section_two_title')
+          .tab-treatments-cleaning__section-2-img-ctnr
+            img.tab-treatments-cleaning__section-2-img(:src='props.section_two_img')
+          .tab-treatments-cleaning__section-2-text(v-html='props.section_two_text')
+
+
+        //- .tab-treatments-cleaning__blog-container
+        //-   .tab-treatments-cleaning__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(7)')
+        //-     .tab-treatments-cleaning__col-blog-image(@click='visitBlog(blog.slug)')
+        //-       .tab-treatments-cleaning__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+        //-     .tab-treatments-cleaning__col-blog-text
+        //-       .tab-treatments-cleaning__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
+        //-       .tab-treatments-cleaning__blog-summary(v-html='(blog.acf.blog_posts.content)')
+        //-       //- .tab-treatments-cleaning__blog-see-more(@click='visitBlog(blog.slug)') See More...
+
+
         .tab-treatments-cleaning__services-title More Services
         .tab-treatments-cleaning__service-container
           swiper.tab-treatments-cleaning__services(:options='swiperOption')
