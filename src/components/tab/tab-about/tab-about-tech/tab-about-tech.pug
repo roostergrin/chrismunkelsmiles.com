@@ -3,11 +3,11 @@
     .tab-about-tech__container
       .tab-about-tech__content-box
         .tab-about-tech__title(v-html='props.title')
-        .tab-about-tech__content(v-html='props.content')
+        //- .tab-about-tech__content(v-html='props.content')
         .tab-about-tech__rows
           .tab-about-tech__row(v-for='(row, i) in props.rows', :key='i')
             .tab-about-tech__col-image
-              .tab-about-tech__image(:style='"backgroundImage: url(" + row.image + ");"')
+              img.tab-about-tech__image(:src='row.image')
             .tab-about-tech__col-text
               .tab-about-tech__row-title(v-html='row.title')
               .tab-about-tech__description(v-html='row.description')
