@@ -4,14 +4,43 @@
       .tab-treatments-restorations__content-box
         .tab-treatments-restorations__title(v-html='props.title')
         //- .tab-treatments-restorations__content(v-html='props.content')
-        .tab-treatments-restorations__blog-container
-          .tab-treatments-restorations__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(10)')
-            .tab-treatments-restorations__col-blog-image(@click='visitBlog(blog.slug)')
-              .tab-treatments-restorations__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
-            .tab-treatments-restorations__col-blog-text
-              .tab-treatments-restorations__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
-              .tab-treatments-restorations__blog-summary(v-html='blog.acf.blog_posts.content')
-              //- .tab-treatments-restorations__blog-see-more(@click='visitBlog(blog.slug)') See More...
+
+        section.tab-treatments-restorations__section-1
+          .tab-treatments-restorations__section-1-title(v-html='props.section_one_title')
+          .tab-treatments-restorations__section-1-img-ctnr
+            img.tab-treatments-restorations__section-1-img(:src='props.section_one_img')
+          .tab-treatments-restorations__section-1-intro(v-html='props.section_one_intro')
+          .tab-treatments-restorations__section-1-list-ctnr-ab
+            .tab-treatments-restorations__section-1-list-a(v-html='props.section_one_list_a')
+            .tab-treatments-restorations__section-1-list-b(v-html='props.section_one_list_b')
+          .tab-treatments-restorations__section-1-list-ctnr-cd
+            .tab-treatments-restorations__section-1-list-c(v-html='props.section_one_list_c')
+            .tab-treatments-restorations__section-1-list-d(v-html='props.section_one_list_d')
+        section.tab-treatments-restorations__section-2
+          .tab-treatments-restorations__section-2-title(v-html='props.section_two_title')
+          .tab-treatments-restorations__section-2-img-ctnr
+            img.tab-treatments-restorations__section-2-img(:src='props.section_two_img')
+          .tab-treatments-restorations__section-2-intro(v-html='props.section_two_intro')
+          .tab-treatments-restorations__section-2-list-ctnr-ab
+            .tab-treatments-restorations__section-2-list-a(v-html='props.section_two_list_a')
+            .tab-treatments-restorations__section-2-list-b(v-html='props.section_two_list_b')
+
+
+
+
+
+
+        //- .tab-treatments-restorations__blog-container
+        //-   .tab-treatments-restorations__blog(v-for='(blog, i) in allBlogs', v-if='blog.tags.includes(10)')
+        //-     .tab-treatments-restorations__col-blog-image(@click='visitBlog(blog.slug)')
+        //-       .tab-treatments-restorations__blog-image(:style='"backgroundImage: url(" + blog.acf.blog_posts.image + ");"')
+        //-     .tab-treatments-restorations__col-blog-text
+        //-       .tab-treatments-restorations__blog-title(v-html='blog.acf.blog_posts.title', @click='visitBlog(blog.slug)')
+        //-       .tab-treatments-restorations__blog-summary(v-html='blog.acf.blog_posts.content')
+        //-       //- .tab-treatments-restorations__blog-see-more(@click='visitBlog(blog.slug)') See More...
+
+
+
         .tab-treatments-restorations__services-title More Services
         .tab-treatments-restorations__service-container
           swiper.tab-treatments-restorations__services(:options='swiperOption')
