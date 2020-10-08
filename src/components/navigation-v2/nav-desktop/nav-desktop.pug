@@ -13,11 +13,11 @@
         a.nav-desktop-v2__icon-box(:href='props.acf.nav.form_link')
           .nav-desktop-v2__form-icon
             Icon(name='NavForm')
-          .nav-desktop-v2__form-text Health History Form
-        a.nav-desktop-v2__icon-box(:href='props.acf.nav.form_link_two')
+          .nav-desktop-v2__form-text(v-html='props.acf.nav.form_link_text')
+        a.nav-desktop-v2__icon-box(:href='props.acf.nav.form_link_two' target='_blank')
           .nav-desktop-v2__form-icon
-            Icon(name='NavForm2')
-          .nav-desktop-v2__form-text Ortho & Jaw Form
+            Icon(name='NavForm2' :title='props.acf.nav.form_link_two_text')
+          .nav-desktop-v2__form-text(v-html='props.acf.nav.form_link_two_text')
   transition(name='fade-in-nav')
     .nav-desktop-v2__bottom-background(v-if='!$store.state.nav || activeMenu || activeModal')
       .nav-desktop-v2__background-line
@@ -41,9 +41,9 @@
           a.nav-desktop-v2__phone(:href='props.acf.nav.phone_link')
             Icon(name='Phone')
           a.nav-desktop-v2__form(:href='props.acf.nav.form_link', target='_blank')
-            Icon(name='NavForm')
+            Icon(name='NavForm' :title='props.acf.nav.form_link_text')
           a.nav-desktop-v2__form(:href='props.acf.nav.form_link_two', target='_blank')
-            Icon(name='NavForm2')
+            Icon(name='NavForm2' :title='props.acf.nav.form_link_two_text')
           .nav-desktop-v2__calendar(@click='toggleModalContact')
             Icon(name='Calendar')
         .nav-desktop-v2__home-logo

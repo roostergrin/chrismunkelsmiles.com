@@ -13,11 +13,11 @@
         a.nav-desktop__icon-box(:href='props.acf.nav.form_link')
           .nav-desktop__form-icon
             Icon(name='NavForm')
-          .nav-desktop__form-text Health History Form
+          .nav-desktop__form-text(v-html='props.acf.nav.form_link_text')
         a.nav-desktop__icon-box(:href='props.acf.nav.form_link_two')
           .nav-desktop__form-icon
-            Icon(name='NavForm2')
-          .nav-desktop__form-text Ortho & Jaw Form
+            Icon(name='NavForm2' :title='props.acf.nav.form_link_two_text')
+          .nav-desktop__form-text(v-html='props.acf.nav.form_link_two_text')
   transition(name='fade-in-nav')
     .nav-desktop__bottom-background(v-if='!$store.state.nav || activeMenu || activeModal')
       .nav-desktop__background-line
